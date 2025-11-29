@@ -1,19 +1,5 @@
 /* Projects Page Styles */
 
-/* Variables (Reusing from style.css for consistency, but defining here for standalone) */
-:root {
-    --primary-green: #2E7D32;
-    --primary-blue: #0277BD;
-    --text-dark: #002f4b;
-    --text-light: #455A64;
-    --white: #ffffff;
-    --light-bg: #F1F8E9;
-    --border-radius: 12px;
-    --shadow-sm: 0 4px 12px rgba(2, 119, 189, 0.08);
-    --shadow-md: 0 8px 24px rgba(2, 119, 189, 0.12);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Hero Section */
 .projects-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');

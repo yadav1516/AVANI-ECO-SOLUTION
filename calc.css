@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     padding: 120px 0 80px;
-    color: white;
+    color: var(--white);
     margin-top: -80px;
 }
 
@@ -26,10 +26,10 @@
 /* Calculator Cards */
 .calc-input-card,
 .calc-results-card {
-    background: white;
+    background: var(--white);
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -38,7 +38,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 25px;
-    color: var(--dark-color);
+    color: var(--text-dark);
     border-bottom: 2px solid var(--light-bg);
     padding-bottom: 15px;
 }
@@ -52,7 +52,7 @@
     display: block;
     font-weight: 500;
     margin-bottom: 8px;
-    color: var(--dark-color);
+    color: var(--text-dark);
 }
 
 .input-with-icon {
@@ -64,7 +64,7 @@
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--primary-color);
+    color: var(--primary-green);
 }
 
 .input-with-icon input {
@@ -77,7 +77,7 @@
 }
 
 .input-with-icon input:focus {
-    border-color: var(--primary-color);
+    border-color: var(--primary-green);
     outline: none;
 }
 
@@ -102,7 +102,7 @@
 .bill-display .currency {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--text-dark);
     margin-right: 5px;
 }
 
@@ -111,7 +111,7 @@
     background: transparent;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-green);
     width: 100%;
 }
 
@@ -136,9 +136,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: var(--primary-green);
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -146,7 +146,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    color: #777;
+    color: var(--text-light);
     margin-top: 5px;
 }
 
@@ -157,12 +157,12 @@
     padding: 15px;
     border-radius: 8px;
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-light);
     margin-top: 20px;
 }
 
 .calc-note i {
-    color: var(--primary-color);
+    color: var(--primary-blue);
     margin-top: 3px;
 }
 
@@ -180,7 +180,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     margin: 0;
-    color: #555;
+    color: var(--text-light);
 }
 
 .system-size-badge {
@@ -191,7 +191,7 @@
 
 .system-size-badge i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--primary-green);
 }
 
 .system-size-badge .badge-content {
@@ -202,12 +202,12 @@
 
 .system-size-badge span {
     font-size: 0.8rem;
-    color: #777;
+    color: var(--text-light);
 }
 
 .system-size-badge strong {
     font-size: 1.4rem;
-    color: var(--primary-color);
+    color: var(--primary-green);
     line-height: 1.1;
 }
 
@@ -229,7 +229,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: var(--primary-blue);
 }
 
 .roof-details {
@@ -239,22 +239,22 @@
 
 .roof-details span {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 .roof-details strong {
     font-size: 1.1rem;
-    color: var(--dark-color);
+    color: var(--text-dark);
 }
 
 .calc-note-warning {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 25px;
 }
 
 .calc-note-warning a {
-    color: var(--primary-color);
+    color: var(--primary-blue);
     font-weight: 600;
     text-decoration: none;
 }
@@ -277,13 +277,13 @@
 
 .savings-item.highlight {
     background: #eef7ff;
-    border-color: var(--primary-color);
+    border-color: var(--primary-blue);
 }
 
 .savings-item .label {
     display: block;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 5px;
 }
 
@@ -291,17 +291,17 @@
     display: block;
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--text-dark);
 }
 
 .savings-item.highlight .value {
-    color: var(--primary-color);
+    color: var(--primary-blue);
 }
 
 .guaranteed-savings {
     text-align: center;
     font-size: 0.9rem;
-    color: #28a745;
+    color: var(--primary-green);
     background: #f0fff4;
     padding: 10px;
     border-radius: 8px;
@@ -321,7 +321,7 @@
 .emi-section h4 {
     font-size: 1.1rem;
     margin-bottom: 15px;
-    color: var(--dark-color);
+    color: var(--text-dark);
     font-weight: 600;
 }
 
@@ -330,11 +330,11 @@
     justify-content: space-between;
     margin-bottom: 10px;
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text-light);
 }
 
 .breakdown-row.subsidy {
-    color: #28a745;
+    color: var(--primary-green);
 }
 
 .breakdown-row.total {
@@ -342,7 +342,7 @@
     padding-top: 10px;
     margin-top: 10px;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--text-dark);
     font-size: 1.1rem;
 }
 
@@ -356,7 +356,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: white;
+    background: var(--white);
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #eee;
@@ -364,7 +364,7 @@
 
 .roi-item i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--primary-green);
 }
 
 .roi-text {
@@ -374,17 +374,17 @@
 
 .roi-text span {
     font-size: 0.75rem;
-    color: #777;
+    color: var(--text-light);
 }
 
 .roi-text strong {
     font-size: 1rem;
-    color: var(--dark-color);
+    color: var(--text-dark);
 }
 
 /* EMI Section */
 .highlight-green {
-    color: #28a745;
+    color: var(--primary-green);
 }
 
 .emi-slider-box {
@@ -397,16 +397,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: var(--white);
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--primary-blue);
 }
 
 .emi-result strong {
     font-size: 1.3rem;
-    color: var(--primary-color);
+    color: var(--primary-blue);
 }
 
 /* Impact Section */
@@ -421,7 +421,7 @@
     padding: 15px 5px;
     background: #f0fff4;
     border-radius: 10px;
-    color: #2e7d32;
+    color: var(--primary-green);
     display: flex;
     flex-direction: column;
     align-items: center;
