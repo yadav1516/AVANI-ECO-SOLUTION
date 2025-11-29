@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Join the Solar Revolution | Pareesan Services</title>
+    <meta name="description"
+        content="Build a career in renewable energy with Pareesan Services. Explore job openings in solar engineering, sales, and operations.">
+    <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .careers-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .job-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(46, 125, 50, 0.2);
+        }
+
+        .job-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .culture-section {
+            background: var(--light-bg);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .culture-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .culture-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(46, 125, 50, 0.1);
+            color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header header-internal">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Pareesan Home">
+                <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png"
+                    alt="Pareesan Services" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link active">Careers</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="calc.html" class="nav-link">Calculator</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="index.html#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="consultation.html" class="btn btn-primary header-btn">Get Quote</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                class="mobile-logo">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="careers-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="hero-title">Power Your <span class="highlight-text">Career</span></h1>
+            <p class="hero-desc">Join a team that's building a sustainable future for India.</p>
+            <a href="#openings" class="btn btn-primary mt-4">View Open Positions</a>
+        </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="culture-section section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-tag">Life at Pareesan</div>
+                <h2 class="section-title">Why Join <span class="highlight">Us?</span></h2>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-card" data-aos="fade-up">
+                    <div class="culture-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Impactful Work</h3>
+                    <p>Contribute directly to reducing carbon footprints and promoting green energy.</p>
+                </div>
+                <div class="culture-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="culture-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Growth Opportunities</h3>
+                    <p>Continuous learning, training programs, and a clear path for career advancement.</p>
+                </div>
+                <div class="culture-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="culture-icon"><i class="fas fa-users"></i></div>
+                    <h3>Great Culture</h3>
+                    <p>A collaborative, inclusive, and innovative work environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section id="openings" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Current <span class="highlight">Openings</span></h2>
+            </div>
+
+            <div class="jobs-list">
+                <!-- Job 1 -->
+                <div class="job-card" data-aos="fade-up">
+                    <div class="job-info">
+                        <h3>Senior Solar Engineer</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Delhi NCR</span>
+                            <span><i class="fas fa-briefcase"></i> Full Time</span>
+                            <span><i class="fas fa-clock"></i> 3+ Years Exp</span>
+                        </div>
+                    </div>
+                    <a href="mailto:hr@pareesan.com?subject=Application for Senior Solar Engineer"
+                        class="btn btn-outline-dark">Apply Now</a>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="job-info">
+                        <h3>Sales Manager (B2B)</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+                            <span><i class="fas fa-briefcase"></i> Full Time</span>
+                            <span><i class="fas fa-clock"></i> 5+ Years Exp</span>
+                        </div>
+                    </div>
+                    <a href="mailto:hr@pareesan.com?subject=Application for Sales Manager"
+                        class="btn btn-outline-dark">Apply Now</a>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="job-info">
+                        <h3>Site Supervisor</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jaipur</span>
+                            <span><i class="fas fa-briefcase"></i> Contract</span>
+                            <span><i class="fas fa-clock"></i> 1+ Years Exp</span>
+                        </div>
+                    </div>
+                    <a href="mailto:hr@pareesan.com?subject=Application for Site Supervisor"
+                        class="btn btn-outline-dark">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <p>Don't see a role that fits? Send your resume to <a href="mailto:hr@pareesan.com"
+                        style="color: var(--primary-blue); font-weight: 600;">hr@pareesan.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                        class="footer-logo">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        sustainability.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="safety.html">Safety</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="partners.html">Partner With Us</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Solar Solutions</a></li>
+                            <li><a href="solar-in-delhi.html">Solar in Delhi</a></li>
+                            <li><a href="#">Rooftop Solar</a></li>
+                            <li><a href="#">Ground Mount</a></li>
+                            <li><a href="#">O&M Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
+                            <li><i class="fas fa-phone"></i> +91 74170 96090</li>
+                            <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pareesan Services Pvt Ltd. All Rights Reserved. | Designed by <a
+                        href="https://veekode.in" target="_blank"
+                        style="color: inherit; text-decoration: none;">Veekode</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>

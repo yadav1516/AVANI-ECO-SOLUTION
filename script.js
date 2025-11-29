@@ -9,14 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Preloader
     const preloader = document.querySelector('.preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
+    if (preloader) {
+        window.addEventListener('load', () => {
             setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 1500);
-    });
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+    }
 
     // Mobile Menu
     const mobileToggle = document.querySelector('.mobile-toggle');

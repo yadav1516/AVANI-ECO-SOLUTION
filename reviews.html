@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews & Testimonials | Pareesan Services</title>
+    <meta name="description"
+        content="See what our customers say about Pareesan Services. Read reviews and watch video testimonials from happy solar owners across India.">
+    <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513828583688-c29a7f99ad13?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            border: 1px solid #eee;
+            height: 100%;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #eee;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+        }
+
+        .reviewer-info span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .review-rating {
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .video-review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header header-internal">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Pareesan Home">
+                <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png"
+                    alt="Pareesan Services" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="calc.html" class="nav-link">Calculator</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="index.html#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="consultation.html" class="btn btn-primary header-btn">Get Quote</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                class="mobile-logo">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="reviews-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="hero-title">Customer <span class="highlight-text">Stories</span></h1>
+            <p class="hero-desc">Hear from the people who are powering their lives with Pareesan.</p>
+        </div>
+    </section>
+
+    <!-- Google Reviews Badge -->
+    <section class="section-padding pb-0 text-center">
+        <div class="container" data-aos="fade-up">
+            <div
+                style="display: inline-block; background: #fff; padding: 20px 40px; border-radius: 50px; box-shadow: var(--shadow-sm); border: 1px solid #eee;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
+                    width="30" style="vertical-align: middle; margin-right: 10px;">
+                <span
+                    style="font-size: 1.2rem; font-weight: 700; color: var(--text-dark); vertical-align: middle;">4.9/5
+                    Rating</span>
+                <span style="color: var(--text-light); margin-left: 10px; vertical-align: middle;">based on 150+
+                    reviews</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Video <span class="highlight">Testimonials</span></h2>
+            </div>
+            <div class="video-review-grid">
+                <div class="video-wrapper" data-aos="fade-up">
+                    <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="Customer Review 1" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="Customer Review 2" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="Customer Review 3" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Reviews -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Client <span class="highlight">Feedback</span></h2>
+            </div>
+            <div class="row">
+                <!-- Review 1 -->
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                                class="reviewer-avatar">
+                            <div class="reviewer-info">
+                                <h4>Rahul Sharma</h4>
+                                <span>Delhi, NCR</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Excellent service from start to finish. The team handled everything from
+                            permissions to installation. My electricity bill has dropped to zero!"</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                                class="reviewer-avatar">
+                            <div class="reviewer-info">
+                                <h4>Priya Singh</h4>
+                                <span>Noida, UP</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="review-text">"Very professional team. They explained the technical details clearly and
+                            the installation quality is top-notch. Highly recommended."</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="reviewer-avatar">
+                            <div class="reviewer-info">
+                                <h4>Amit Verma</h4>
+                                <span>Gurgaon, Haryana</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"I installed a 10kW system for my office. The ROI calculation was spot
+                            on. Great support even after installation."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                        class="footer-logo">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        sustainability.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="safety.html">Safety</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="partners.html">Partner With Us</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solutions.html">Solar Solutions</a></li>
+                            <li><a href="solar-in-delhi.html">Solar in Delhi</a></li>
+                            <li><a href="#">Rooftop Solar</a></li>
+                            <li><a href="#">Ground Mount</a></li>
+                            <li><a href="#">O&M Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
+                            <li><i class="fas fa-phone"></i> +91 74170 96090</li>
+                            <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pareesan Services Pvt Ltd. All Rights Reserved. | Designed by <a
+                        href="https://veekode.in" target="_blank"
+                        style="color: inherit; text-decoration: none;">Veekode</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
