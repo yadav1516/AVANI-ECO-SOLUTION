@@ -45,35 +45,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.padding = '10px 0';
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(10px)';
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            header.classList.add('scrolled');
         } else {
-            header.style.padding = '15px 0';
-            header.style.background = 'transparent';
-            header.style.backdropFilter = 'none';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
         }
+    }, { passive: true });
 
-        // Active Link Highlighting
-        let current = '';
-        const sections = document.querySelectorAll('section');
+    // Active Link Highlighting with IntersectionObserver
+    const sections = document.querySelectorAll('section');
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Trigger when section is near top
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                if (id) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').includes(id)) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
             }
         });
+    }, observerOptions);
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
+    sections.forEach(section => {
+        observer.observe(section);
     });
 
     // Expanding Cards (Services)
@@ -196,30 +200,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Project Filters
+    // Project Filters (Index Page)
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
+    const projectItems = document.querySelectorAll('.project-card'); // Updated selector to match new class
+
+    // Function to filter projects
+    function filterProjects(filterValue) {
+        projectItems.forEach(item => {
+            const hasClass = item.classList.contains(filterValue);
+            const categoryAttr = item.getAttribute('data-category');
+
+            if (filterValue === 'all' || hasClass || categoryAttr === filterValue) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                item.style.display = 'none';
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            }
+        });
+    }
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Remove active class from all
             filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active to clicked
             btn.classList.add('active');
 
             const filterValue = btn.getAttribute('data-filter');
 
             projectItems.forEach(item => {
-                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                // Check for category in classList (legacy) or data-category attribute
+                const hasClass = item.classList.contains(filterValue);
+                const categoryAttr = item.getAttribute('data-category');
+
+                if (filterValue === 'all' || hasClass || categoryAttr === filterValue) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 100);
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
                 } else {
+                    item.style.display = 'none';
                     item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
+                    item.style.transform = 'translateY(20px)';
                 }
             });
         });
@@ -255,4 +283,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+// Testimonial Tabs
+window.showTestimonialTab = function (tabName) {
+    // Hide all contents
+    document.querySelectorAll('.testimonial-content').forEach(content => {
+        content.classList.remove('active');
+    });
+
+    // Deactivate all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show selected content
+    if (tabName === 'video') {
+        document.getElementById('video-testimonials').classList.add('active');
+        document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
+    } else {
+        document.getElementById('client-testimonials').classList.add('active');
+        document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
+    }
+}
+
+
+// Counter Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // The lower the slower
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            // Reset to 0 before starting animation
+            counter.innerText = '0';
+            updateCount();
+        });
+    };
+
+    // Trigger animation when section is in view
+    let counterSection = document.querySelector('.achievements-section');
+    if (counterSection) {
+        let options = {
+            rootMargin: '0px',
+            threshold: 0.3
+        }
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+        observer.observe(counterSection);
+    }
 });

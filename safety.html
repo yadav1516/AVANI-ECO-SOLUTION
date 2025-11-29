@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety & Quality - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Our commitment to uncompromised safety and quality standards in every solar project we undertake.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .safety-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .policy-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            height: 100%;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .policy-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .cert-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .cert-item i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png"
+                    alt="Pareesan Services" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="safety.html" class="nav-link active">Safety</a></li>
+                    <li><a href="webinars.html" class="nav-link">Webinars</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="calc.html" class="nav-link">Calculator</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="index.html#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="#" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                class="mobile-logo">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="safety-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="hero-title">Safety <span class="highlight-text">First</span></h1>
+            <p class="hero-desc">We adhere to the strictest international safety standards. Our zero-accident policy and
+                rigorous quality checks ensure every project is built to last.</p>
+        </div>
+    </section>
+
+    <!-- Safety Standards -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our <span class="highlight">Commitment</span></h2>
+                <p class="section-subtitle">Ensuring the well-being of our team, clients, and the environment.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="policy-card">
+                        <div class="policy-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Workplace Safety</h3>
+                        <p>Mandatory PPE, regular safety drills, and strict adherence to site safety protocols to
+                            prevent accidents.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="policy-card">
+                        <div class="policy-icon"><i class="fas fa-check-double"></i></div>
+                        <h3>Quality Assurance</h3>
+                        <p>Multi-stage quality checks for all components and installation processes to ensure long-term
+                            reliability.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="policy-card">
+                        <div class="policy-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Environmental Care</h3>
+                        <p>Sustainable practices in construction and waste management to minimize environmental impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our <span class="highlight">Certifications</span></h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item" data-aos="zoom-in">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management System</p>
+                </div>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 14001:2015</h4>
+                    <p>Environmental Management</p>
+                </div>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 45001:2018</h4>
+                    <p>Occupational Health & Safety</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                        class="footer-logo">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        sustainability.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="safety.html">Safety</a></li>
+                            <li><a href="webinars.html">Webinars</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Solar EPC</a></li>
+                            <li><a href="index.html#services">Rooftop Solar</a></li>
+                            <li><a href="index.html#services">O&M Services</a></li>
+                            <li><a href="calc.html">Solar Calculator</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
+                            <li><i class="fas fa-phone"></i> +91 74170 96090</li>
+                            <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pareesan Services Pvt Ltd. All Rights Reserved. | Designed by <a
+                        href="https://veekode.in" target="_blank"
+                        style="color: inherit; text-decoration: none;">Veekode</a></p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>

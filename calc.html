@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Calculator - Pareesan Services Pvt Ltd</title>
+    <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
+    <meta name="description"
+        content="Calculate your solar savings with Pareesan's advanced solar calculator. Estimate system size, ROI, and environmental impact.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png"
+                    alt="Pareesan Services" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety</a></li>
+                    <li><a href="webinars.html" class="nav-link">Webinars</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="index.html#about" class="nav-link">About Pareesan</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li><a href="index.html#technology" class="nav-link">PV Module</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="calc.html" class="nav-link">Calculator</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="index.html#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="#" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                class="mobile-logo">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#services">Solutions</a></li>
+            <li><a href="index.html#technology">Technology</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calc.html" class="active">Calculator</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Calculator Hero -->
+    <!-- Hero Section (Video Background) -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video"
+                poster="https://pareesan.com/wp-content/uploads/2024/08/solar-panels-roof.jpg">
+                <source src="https://virya-energy.com/wp-content/uploads/2024/12/landing_page_virya_8sec_1080p.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fas fa-calculator"></i> Smart Solar Estimator
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                Calculate Your <br>
+                <span class="highlight-text">Solar Savings</span>
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                Unlock savings, build that dream fund, and start ticking off your checklist with accurate solar
+                estimates.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="#calculator" class="btn btn-primary"
+                    onclick="document.querySelector('.advanced-calculator').scrollIntoView({behavior: 'smooth'})">Start
+                    Calculating</a>
+            </div>
+        </div>
+
+        <!-- Impact Dashboard (Floating) -->
+        <div class="impact-dashboard-container" data-aos="fade-up" data-aos-delay="400">
+            <div class="impact-dashboard">
+                <div class="impact-item">
+                    <div class="impact-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-number" data-target="15000">0</span>
+                        <span class="impact-label">Tons CO2 Offset</span>
+                    </div>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <div class="impact-icon"><i class="fas fa-tree"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-number" data-target="25000">0</span>
+                        <span class="impact-label">Trees Planted</span>
+                    </div>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <div class="impact-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-number" data-target="500">0</span>
+                        <span class="impact-label">MW Generated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Calculator Section -->
+    <section class="advanced-calculator section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column: Inputs -->
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="calc-input-card">
+                        <h3 class="card-title">Your Details</h3>
+
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="pincode" placeholder="Enter pincode" maxlength="6">
+                            </div>
+                            <small class="error-msg" id="pincodeError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-city"></i>
+                                <input type="text" id="city" placeholder="Enter city name">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label>Average Monthly Electricity Bill</label>
+                            <div class="bill-display">
+                                <span class="currency">₹</span>
+                                <input type="number" id="billInput" value="5000" min="500">
+                            </div>
+                            <div class="range-slider-container">
+                                <input type="range" id="billSlider" min="500" max="50000" step="100" value="5000">
+                                <div class="range-labels">
+                                    <span>₹500</span>
+                                    <span>₹50,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-note">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Based on average electricity rates and solar generation potential in your area.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Results -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="calc-results-card">
+                        <div class="results-header">
+                            <h3>Required System Size</h3>
+                            <div class="system-size-badge">
+                                <i class="fas fa-solar-panel"></i>
+                                <div class="badge-content">
+                                    <span>System Size</span>
+                                    <strong id="recSystemSize">10.26 kW</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="roof-area-display">
+                            <div class="roof-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <div class="roof-details">
+                                <span>Roof Area Required</span>
+                                <strong id="roofArea">608 sq. ft.</strong>
+                            </div>
+                        </div>
+
+                        <div class="calc-note-warning">
+                            <p>Do not have required roof area? <a href="#" onclick="openLeadForm()">Our consultants will
+                                    guide you, Get in touch</a></p>
+                        </div>
+
+                        <div class="savings-section mt-4">
+                            <h4>Your Solar Savings</h4>
+                            <div class="savings-grid">
+                                <div class="savings-item">
+                                    <span class="label">Monthly</span>
+                                    <span class="value" id="monthlySavings">₹10,694</span>
+                                </div>
+                                <div class="savings-item highlight">
+                                    <span class="label">Yearly</span>
+                                    <span class="value" id="annualSavings">₹1,28,331</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="investment-breakdown mt-4">
+                            <h4>Your Investment</h4>
+                            <div class="breakdown-row">
+                                <span>Total cost of plant</span>
+                                <span id="systemCost">₹5,88,000</span>
+                            </div>
+                            <div class="breakdown-row subsidy">
+                                <span>Central Subsidy</span>
+                                <span id="centralSubsidy">-₹78,000</span>
+                            </div>
+                            <div class="breakdown-row subsidy">
+                                <span>State Subsidy</span>
+                                <span id="stateSubsidy">-₹30,000</span>
+                            </div>
+                            <div class="breakdown-row total">
+                                <span>Net Cost</span>
+                                <span id="netCost">₹4,80,000</span>
+                            </div>
+
+                            <div class="roi-grid mt-3">
+                                <div class="roi-item">
+                                    <i class="fas fa-piggy-bank"></i>
+                                    <div class="roi-text">
+                                        <span>Lifetime Savings</span>
+                                        <strong id="lifetimeSavings">₹32,08,273</strong>
+                                    </div>
+                                </div>
+                                <div class="roi-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div class="roi-text">
+                                        <span>Return on Investment</span>
+                                        <strong id="roiPercent">22.71% p.a.</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emi-section mt-4">
+                            <h4>Get your solar at ₹0 investment</h4>
+                            <div class="breakdown-row">
+                                <span>Minimum Down Payment</span>
+                                <span id="downPayment">₹1,08,000</span>
+                            </div>
+                            <div class="breakdown-row subsidy">
+                                <span>Subsidy Adjustment</span>
+                                <span id="subsidyAdjustment">-₹1,08,000</span>
+                            </div>
+                            <div class="breakdown-row total">
+                                <span>Net Down Payment</span>
+                                <span class="highlight-green">₹0</span>
+                            </div>
+
+                            <div class="emi-slider-box mt-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>EMI Tenure</span>
+                                    <strong id="emiTenureDisplay">5 years</strong>
+                                </div>
+                                <input type="range" id="emiSlider" min="1" max="7" step="1" value="5">
+                                <div class="range-labels">
+                                    <span>1 Yr</span>
+                                    <span>7 Yrs</span>
+                                </div>
+                            </div>
+
+                            <div class="emi-result">
+                                <span>Monthly EMI</span>
+                                <strong id="monthlyEMI">₹10,677</strong>
+                            </div>
+                        </div>
+
+                        <div class="impact-section mt-4">
+                            <h4>Your Solar Saves More Than Money</h4>
+                            <div class="impact-grid">
+                                <div class="impact-box">
+                                    <i class="fas fa-globe-americas"></i>
+                                    <span id="co2Mitigated">12,066 Kg</span>
+                                    <small>CO2 Mitigated</small>
+                                </div>
+                                <div class="impact-box">
+                                    <i class="fas fa-tree"></i>
+                                    <span id="treesPlanted">402</span>
+                                    <small>Trees Planted</small>
+                                </div>
+                                <div class="impact-box">
+                                    <i class="fas fa-car-side"></i>
+                                    <span id="distanceDriven">1,07,730 Km</span>
+                                    <small>Distance Driven</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="disclaimer-box mt-4">
+                            <h5>Disclaimer:</h5>
+                            <p>Monthly, yearly and 5-year Savings have been calculated basis total savings calculated
+                                over 25 years. Annual degradation of 1% and 3% annual inflation have been assumed for
+                                this calculation.</p>
+                            <p>The price/EMI shown is indicative only and considers starting price without after-sales
+                                service. The actual cost/EMI of your solar project may vary based on factors such as
+                                your city, system variant, panel type, inverter type, available roof space, roof height,
+                                discom charges, mounting structure, lender, type of after sales service, savings
+                                guarantee, etc.</p>
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-lg mt-4" onclick="openLeadForm()">Book Free
+                            Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
+                        class="footer-logo">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        sustainability.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#safety">Safety</a></li>
+                            <li><a href="index.html#csr">CSR</a></li>
+                            <li><a href="index.html#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Solar EPC</a></li>
+                            <li><a href="index.html#services">Rooftop Solar</a></li>
+                            <li><a href="index.html#services">O&M Services</a></li>
+                            <li><a href="calc.html">Solar Calculator</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
+                            <li><i class="fas fa-phone"></i> +91 74170 96090</li>
+                            <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pareesan Services Pvt Ltd. All Rights Reserved. | Designed by <a
+                        href="https://veekode.in" target="_blank"
+                        style="color: inherit; text-decoration: none;">Veekode</a></p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="calc.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile Menu Logic (Copied from main script)
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+        const closeMenu = document.querySelector('.close-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+        if (overlay) overlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+/* Projects Page Styles */
+
+/* Variables (Reusing from style.css for consistency, but defining here for standalone) */
+:root {
+    --primary-green: #2E7D32;
+    --primary-blue: #0277BD;
+    --text-dark: #002f4b;
+    --text-light: #455A64;
+    --white: #ffffff;
+    --light-bg: #F1F8E9;
+    --border-radius: 12px;
+    --shadow-sm: 0 4px 12px rgba(2, 119, 189, 0.08);
+    --shadow-md: 0 8px 24px rgba(2, 119, 189, 0.12);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero Section */
+.projects-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 0;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Filters */
+.filters-container {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+/* Projects Grid */
+.projects-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-thumb {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-thumb img {
+    transform: scale(1.1);
+}
+
+.capacity-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 2;
+}
+
+.project-details {
+    padding: 25px;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.project-location {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-location i {
+    color: var(--primary-green);
+}
+
+/* Zone Selector (Optional) */
+.zone-select {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    margin-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-grid-full {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-container {
+        border-radius: 20px;
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .zone-select {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}

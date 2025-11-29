@@ -7,6 +7,7 @@
     <title>Pareesan Services Pvt Ltd - Premier Solar EPC & Technology Solutions</title>
     <meta name="description"
         content="Pareesan Services: India's leading Solar EPC company. Industrial, Commercial, and Utility-scale solar solutions with advanced technology and safety standards.">
+    <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,8 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="achievements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Animations -->
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-    <!-- Preloader -->
+    <!-- Preloader
     <div class="preloader">
         <div class="loader-content">
             <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
@@ -36,32 +37,9 @@
             </div>
             <p class="loader-text">Energizing the Future...</p>
         </div>
-    </div>
+    </div> -->
 
-    <!-- Top Bar (Corporate Style) -->
-    <div class="top-bar">
-        <div class="container top-bar-container">
-            <div class="top-contact">
-                <a href="tel:+917417096090"><i class="fas fa-phone-alt"></i> +91 74170 96090</a>
-                <a href="mailto:info@pareesan.com"><i class="fas fa-envelope"></i> info@pareesan.com</a>
-            </div>
-            <div class="top-links">
-                <div class="google-rating">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"
-                        width="16">
-                    <span class="rating-score">4.9/5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="review-count">(2000+ Reviews)</span>
-                </div>
-                <a href="#">Careers</a>
-                <a href="#">Newsroom</a>
-                <a href="#">Sustainability</a>
-                <div class="lang-select">
-                    <span>EN</span> <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Header -->
     <header class="header">
@@ -74,17 +52,18 @@
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety</a></li>
+                    <li><a href="webinars.html" class="nav-link">Webinars</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
                     <li class="nav-item has-dropdown">
-                        <a href="#about" class="nav-link">About Pareesan</a>
+                        <a href="#about" class="nav-link">About Us</a>
                         <div class="dropdown-menu">
                             <a href="#about" class="dropdown-item">Who We Are</a>
-                            <a href="#safety" class="dropdown-item">Safety & Quality</a>
-                            <a href="#csr" class="dropdown-item">CSR & Sustainability</a>
                             <a href="#awards" class="dropdown-item">Awards</a>
                         </div>
                     </li>
                     <li class="nav-item has-dropdown">
-                        <a href="#services" class="nav-link">Smart Energy Solutions</a>
+                        <a href="#services" class="nav-link">Services</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Solar EPC</a>
                             <a href="#" class="dropdown-item">O&M Services</a>
@@ -92,16 +71,16 @@
                             <a href="#" class="dropdown-item">Ground Mounted</a>
                         </div>
                     </li>
-                    <li><a href="#technology" class="nav-link">PV Module</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Service & Support</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="calc.html" class="nav-link">Calculator</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
-                <a href="#" class="icon-link" aria-label="Global"><i class="fas fa-globe"></i></a>
-                <a href="#" class="icon-link" aria-label="Search"><i class="fas fa-search"></i></a>
-                <button class="mobile-toggle" aria-label="Menu">
+                <a href="#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="#" onclick="openLeadForm()" class="btn btn-primary header-btn pulse-btn">Get Free
+                    Consultation</a>
+                <button class="mobile-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -115,24 +94,29 @@
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
-                class="mobile-logo">
-            <button class="close-menu"><i class="fas fa-times"></i></button>
+                class="mobile-logo" width="150" height="45">
+            <button class="close-menu" aria-label="Close Menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
             <li><a href="#">Home</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Solutions</a></li>
             <li><a href="#technology">Technology</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calc.html">Calculator</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="openLeadForm()" style="color: var(--primary-green);">Get Quote</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline class="hero-video"
+                poster="https://pareesan.com/wp-content/uploads/2024/08/solar-panels-roof.jpg">
                 <source src="https://virya-energy.com/wp-content/uploads/2024/12/landing_page_virya_8sec_1080p.mp4"
                     type="video/mp4">
             </video>
@@ -187,20 +171,87 @@
     </section>
 
     <!-- Featured In (News Coverage) -->
-    <section class="news-coverage-strip">
+    <!-- <section class="news-coverage-strip">
         <div class="container">
-            <p class="news-label">Featured In:</p>
+            <p class="news-label">Awards & Recognition:</p>
             <div class="news-logos">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/The_Economic_Times_logo.svg"
-                    alt="Economic Times">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Dainik_Bhaskar_Logo.jpg"
-                    alt="Dainik Bhaskar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/The_Hindu_logo.svg/2560px-The_Hindu_logo.svg.png"
-                    alt="The Hindu">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Hindustan_Times_logo.svg"
-                    alt="Hindustan Times">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Business_Standard_logo.svg/1200px-Business_Standard_logo.svg.png"
-                    alt="Business Standard">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQooAHQSXw-IP8G13g22Mx3Ebr98uG_ofRS6g&s"
+                    alt="Economic Times" width="150" height="50" loading="lazy">
+                <img src="https://play-lh.googleusercontent.com/hkVImPJu5DlxSM9_buUJjDRMfkAbA9ol7LM1Ia8WKtY9LFT6uut7E4UowXKi1aAZ0WC45od__fqwc8SuHa5NhA"
+                    alt="Dainik Bhaskar" width="150" height="50" loading="lazy">
+                <img src="https://cdn.wan-ifra.org/wp-content/uploads/2021/06/24134835/Hindu.png" alt="The Hindu"
+                    width="150" height="50" loading="lazy">
+                <img src="https://play-lh.googleusercontent.com/D27aUCZkJytibuJccu9oeHCdU6_1CXTVtSlNxr6QL29IMfXPjlSZrhhCCc9bWsTu72IgH6swJXReHSYKaFD2lw"
+                    alt="Hindustan Times" width="150" height="50" loading="lazy">
+                <img src="https://yt3.googleusercontent.com/FQvVwa76pC2yYyQYatT9HsAtg1IfzFVFcuKL8r8oF03-pgJ7D7Gj_CEYPTeJOAeSp-C1fPjk=s900-c-k-c0x00ffffff-no-rj"
+                    alt="Business Standard" width="150" height="50" loading="lazy">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section bg-light">
+        <div class="container">
+            <!-- Row 1: Team & Customers -->
+            <div class="achievements-grid compact-grid mb-4">
+                <div class="achievement-card compact-card" data-aos="fade-up">
+                    <div class="achievement-icon"><i class="fas fa-users"></i></div>
+                    <div class="achievement-content">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="50">0</h3>
+                            <span>+</span>
+                        </div>
+                        <p>Employees</p>
+                    </div>
+                </div>
+                <div class="achievement-card compact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="achievement-icon"><i class="fas fa-hard-hat"></i></div>
+                    <div class="achievement-content">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="300">0</h3>
+                            <span>+</span>
+                        </div>
+                        <p>Team & Vendors</p>
+                    </div>
+                </div>
+                <div class="achievement-card compact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-icon"><i class="fas fa-smile"></i></div>
+                    <div class="achievement-content">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="50">0</h3>
+                            <span>+</span>
+                        </div>
+                        <p>Customers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Projects Commissioned -->
+            <div class="projects-commissioned-wrapper compact-wrapper" data-aos="fade-up">
+                <h4 class="text-center mb-3 text-white">Projects Successfully Commissioned</h4>
+                <div class="achievements-grid compact-grid">
+                    <div class="achievement-card dark-card compact-card">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="200">0</h3>
+                            <span>+</span>
+                        </div>
+                        <p>Projects</p>
+                    </div>
+                    <div class="achievement-card dark-card compact-card">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="40">0</h3>
+                            <span>MW+</span>
+                        </div>
+                        <p>Rooftop</p>
+                    </div>
+                    <div class="achievement-card dark-card compact-card">
+                        <div class="achievement-data">
+                            <h3 class="counter" data-target="60">0</h3>
+                            <span>MW+</span>
+                        </div>
+                        <p>Ground Mount</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -212,7 +263,7 @@
                 <div class="about-image-col" data-aos="fade-right">
                     <div class="about-image-wrapper">
                         <img src="https://pareesan.com/wp-content/uploads/2024/08/engineer-on-rooftop-kneeling-next-to-solar-panels-photo-voltaic-with-tool-in-hand-for-installation-e1696032501376.jpg"
-                            alt="Solar Engineer" class="about-main-img">
+                            alt="Solar Engineer" class="about-main-img" width="600" height="400" loading="lazy">
                         <div class="experience-badge">
                             <span class="years">10+</span>
                             <span class="text">Years of<br>Excellence</span>
@@ -227,6 +278,10 @@
                         Engineering, Procurement, and Construction (EPC) services. We empower businesses and communities
                         to switch to sustainable energy with confidence.
                     </p>
+                    <div class="total-work-stat mb-4">
+                        <h4 style="color: var(--primary-blue); font-weight: 700;">Over 10 Years of Excellence in Solar
+                            Energy</h4>
+                    </div>
 
                     <div class="features-list">
                         <div class="feature-item">
@@ -444,71 +499,65 @@
         </div>
     </section>
 
-    <!-- Safety & Quality -->
-    <section id="safety" class="safety-section section-padding">
-        <div class="container">
-            <div class="safety-wrapper">
-                <div class="safety-content" data-aos="fade-right">
-                    <div class="section-tag">Safety First</div>
-                    <h2 class="section-title">Uncompromised <span class="highlight">Quality & Safety</span></h2>
-                    <p class="section-desc">We adhere to the strictest international safety standards. Our zero-accident
-                        policy and rigorous quality checks ensure every project is built to last.</p>
-                    <div class="cert-badges">
-                        <div class="cert-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>ISO 9001</span>
-                        </div>
-                        <div class="cert-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>ISO 14001</span>
-                        </div>
-                        <div class="cert-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>ISO 45001</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="safety-image" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1000"
-                        alt="Safety Standards">
-                    <div class="safety-overlay">
-                        <h4>100% Safety Record</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
 
     <!-- Process Flow -->
     <section class="process-section section-padding bg-light">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
                 <div class="section-tag">Workflow</div>
-                <h2 class="section-title">Our Execution <span class="highlight">Process</span></h2>
+                <h2 class="section-title">Our Execution <span class="highlight">Process</span>
+                </h2>
             </div>
-            <div class="process-steps">
-                <div class="step-item" data-aos="fade-up">
-                    <div class="step-number">01</div>
-                    <h4>Consultation</h4>
-                    <p>Site survey & feasibility study.</p>
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-card" data-aos="fade-up">
+                    <div class="process-img">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000"
+                            alt="Consultation" width="1000" height="667" loading="lazy">
+                    </div>
+                    <div class="process-content">
+                        <div class="step-number">01</div>
+                        <h4>Consultation</h4>
+                        <p>Site survey & feasibility study.</p>
+                    </div>
                 </div>
-                <div class="step-connector"></div>
-                <div class="step-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number">02</div>
-                    <h4>Design</h4>
-                    <p>Custom engineering & approvals.</p>
+                <!-- Step 2 -->
+                <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-img">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1000"
+                            alt="Design" width="1000" height="667" loading="lazy">
+                    </div>
+                    <div class="process-content">
+                        <div class="step-number">02</div>
+                        <h4>Design</h4>
+                        <p>Custom engineering & approvals.</p>
+                    </div>
                 </div>
-                <div class="step-connector"></div>
-                <div class="step-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number">03</div>
-                    <h4>Installation</h4>
-                    <p>Professional deployment.</p>
+                <!-- Step 3 -->
+                <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-img">
+                        <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1000"
+                            alt="Installation" width="1000" height="667" loading="lazy">
+                    </div>
+                    <div class="process-content">
+                        <div class="step-number">03</div>
+                        <h4>Installation</h4>
+                        <p>Professional deployment.</p>
+                    </div>
                 </div>
-                <div class="step-connector"></div>
-                <div class="step-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-number">04</div>
-                    <h4>Commissioning</h4>
-                    <p>Grid sync & handover.</p>
+                <!-- Step 4 -->
+                <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-img">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000"
+                            alt="Commissioning" width="1000" height="667" loading="lazy">
+                    </div>
+                    <div class="process-content">
+                        <div class="step-number">04</div>
+                        <h4>Commissioning</h4>
+                        <p>Grid sync & handover.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -518,114 +567,213 @@
     <section id="projects" class="projects-section section-padding">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
-                <div class="section-tag">Portfolio</div>
-                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="rooftop">Rooftop</button>
-                    <button class="filter-btn" data-filter="ground">Ground Mount</button>
-                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Featured <span class="highlight">Projects</span>
+                    </h2>
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="rooftop">Rooftop</button>
+                        <button class="filter-btn" data-filter="ground">Ground Mount</button>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="rooftop" data-aos="fade-up">
+                        <div class="capacity-badge">400 kWp</div>
+                        <div class="project-thumb">
+                            <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0017.jpg"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Haldiram Bhujiawala Limited</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Kolkata, West Bengal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="rooftop" data-aos="fade-up" data-aos-delay="50">
+                        <div class="capacity-badge">1.2 MWp</div>
+                        <div class="project-thumb">
+                            <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0018.jpg"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">AutoGen India Private Limited</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="ground" data-aos="fade-up" data-aos-delay="100">
+                        <div class="capacity-badge">1.3 MWp</div>
+                        <div class="project-thumb">
+                            <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0019.jpg"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Godavari Biorefineries Ltd</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Kopargaon, Maharashtra
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="rooftop" data-aos="fade-up" data-aos-delay="150">
+                        <div class="capacity-badge">430 kWp</div>
+                        <div class="project-thumb">
+                            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1000"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Saffron Suitings Pvt Ltd</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Bhilwara, Rajasthan
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="rooftop" data-aos="fade-up" data-aos-delay="200">
+                        <div class="capacity-badge">250 kWp</div>
+                        <div class="project-thumb">
+                            <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1000"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Pennar Industries Limited</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="ground" data-aos="fade-up" data-aos-delay="250">
+                        <div class="capacity-badge">2.5 MWp</div>
+                        <div class="project-thumb">
+                            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1000"
+                                alt="Project" width="600" height="400" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Nittan India Tech Pvt Ltd</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> Sri City, Andhra Pradesh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5" style="margin-top: 60px !important;" data-aos="fade-up">
+                    <a href="projects.html" class="btn btn-primary btn-lg">View All Projects <i
+                            class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+
+            </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-tag">Testimonials</div>
+                <h2 class="section-title">Stories of <span class="highlight">Change</span></h2>
+                <p class="section-subtitle">Hear from our satisfied customers who have embraced
+                    the solar revolution.</p>
+            </div>
+
+            <div class="testimonial-tabs" data-aos="fade-up">
+                <button class="tab-btn active" onclick="showTestimonialTab('video')">Video
+                    Testimonials</button>
+                <button class="tab-btn" onclick="showTestimonialTab('client')">Client
+                    Reviews</button>
+            </div>
+
+            <!-- Video Testimonials Tab -->
+            <div id="video-testimonials" class="testimonial-content active">
+                <div class="video-grid mb-5">
+                    <!-- Video Item 1 -->
+                    <div class="video-card" data-aos="fade-up">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/LXb3EKWsInQ?si=ExampleVideoID"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mr. Sharma, Delhi</h4>
+                            <p>Saved ₹50,000/year with 5kW Rooftop Solar</p>
+                        </div>
+                    </div>
+                    <!-- Video Item 2 -->
+                    <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/LXb3EKWsInQ?si=ExampleVideoID"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mrs. Gupta, Noida</h4>
+                            <p>Zero electricity bills since 2023</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="projects-grid">
-                <!-- Project Items (Same as before but with more corporate styling) -->
-                <div class="project-item rooftop" data-aos="fade-up">
-                    <div class="project-img">
-                        <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0017.jpg"
-                            alt="Project 1">
-                        <div class="project-overlay">
-                            <div class="project-info">
-                                <h4>Industrial Rooftop</h4>
-                                <p>500kW | Delhi</p>
+
+            <!-- Text Testimonials Tab -->
+            <div id="client-testimonials" class="testimonial-content">
+                <div class="row">
+                    <div class="col-md-6 mb-4" data-aos="fade-up">
+                        <div class="testimonial-card p-4 bg-white rounded shadow-sm">
+                            <p class="mb-3">"Pareesan Services provided excellent service. The
+                                installation was quick and professional."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ml-3">
+                                    <h5 class="mb-0">Amit Patel</h5>
+                                    <small class="text-muted">Residential Customer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card p-4 bg-white rounded shadow-sm">
+                            <p class="mb-3">"Highly recommended for commercial solar projects.
+                                Their engineering team is top-notch."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ml-3">
+                                    <h5 class="mb-0">Rajiv Singh</h5>
+                                    <small class="text-muted">Factory Owner</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-item ground" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img">
-                        <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0018.jpg"
-                            alt="Project 2">
-                        <div class="project-overlay">
-                            <div class="project-info">
-                                <h4>Solar Park</h4>
-                                <p>1MW | Rajasthan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item commercial" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img">
-                        <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0019.jpg"
-                            alt="Project 3">
-                        <div class="project-overlay">
-                            <div class="project-info">
-                                <h4>Corporate HQ</h4>
-                                <p>200kW | Gurgaon</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- More items... -->
             </div>
         </div>
     </section>
 
-    <!-- Featured Case Study -->
-    <section class="case-study-section section-padding bg-dark text-white">
-        <div class="container">
-            <div class="case-study-wrapper">
-                <div class="case-content" data-aos="fade-right">
-                    <div class="section-tag text-white">Case Study</div>
-                    <h2 class="section-title text-white">Transforming Industrial Energy</h2>
-                    <h4 class="case-subtitle">1.5 MW Rooftop Installation for Textile Giant</h4>
-                    <p class="case-desc">
-                        <strong>Challenge:</strong> High electricity costs and carbon footprint for a 24/7 manufacturing
-                        facility.<br><br>
-                        <strong>Solution:</strong> We designed a custom high-efficiency rooftop system using bifacial
-                        modules and robotic cleaning.<br><br>
-                        <strong>Result:</strong> 40% reduction in energy bills and 2000 tons of CO2 offset annually.
-                    </p>
-                    <a href="#" class="btn btn-primary mt-3">Read Full Story</a>
-                </div>
-                <div class="case-image" data-aos="fade-left">
-                    <img src="https://pareesan.com/wp-content/uploads/2024/08/IMG-20240815-WA0020.jpg" alt="Case Study">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Awards Strip -->
-    <section id="awards" class="awards-section">
-        <div class="container">
-            <div class="awards-track">
-                <div class="award-item">
-                    <i class="fas fa-trophy"></i>
-                    <span>Best EPC Company 2024</span>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-medal"></i>
-                    <span>Safety Excellence Award</span>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-star"></i>
-                    <span>Top Rated on Google</span>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-certificate"></i>
-                    <span>ISO 9001:2015 Certified</span>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
 
     <!-- Partners & Clients -->
     <section id="clients" class="clients-section section-padding">
         <div class="container">
             <div class="section-header text-center mb-5">
-                <h2 class="section-title">Trusted by <span class="highlight">Industry Leaders</span></h2>
+                <h2 class="section-title">Trusted by <span class="highlight">Industry
+                        Leaders</span></h2>
             </div>
             <div class="clients-carousel-container">
                 <div class="clients-track">
+                    <!-- Original Set -->
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/Roofsol.png"
                             alt="Roofsol"></div>
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/CleanMax.png"
@@ -637,53 +785,85 @@
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/Hartek.png"
                             alt="Hartek"></div>
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/HFM.png"
-                            alt="HFM"></div>
-                    <!-- Duplicates -->
+                            alt="HFM">
+                    </div>
+                    <div class="client-logo"><img
+                            src="data:image/png;base64,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"
+                            alt="Acme Solar"></div>
+                    <div class="client-logo"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx63JW3ZbHr3FrIYMWGXMktNAxq5SqKT1MOQ&s"
+                            alt="M+ Solar"></div>
+                    <div class="client-logo"><img src="https://sunkind.in/wp-content/uploads/2023/11/Sunkindlogo.png"
+                            alt="Sunkind Energy"></div>
+                    <div class="client-logo"><img
+                            src="https://media.licdn.com/dms/image/v2/C4E0BAQEFJKsAF5HIng/company-logo_200_200/company-logo_200_200/0/1651743975602/fourth_partner_energy_private_limited_logo?e=2147483647&v=beta&t=uLbmzITTns9C39BY-aiN6tQaucQ-9gDa2CPocm2waeo"
+                            alt="Fourth Partner Energy"></div>
+                    <div class="client-logo"><img
+                            src="https://media.licdn.com/dms/image/v2/D560BAQETJZXs6kG50g/company-logo_200_200/B56Zb4W_5MGsAU-/0/1747923502001/kalpapower_logo?e=2147483647&v=beta&t=xO-PHnFd_CLtLbNU_uQGZ7sM-81oHyM-esxOpvokT7g"
+                            alt="Kalpa Power"></div>
+                    <div class="client-logo"><img
+                            src="https://www.akamai.com/site/en/images/logo/2024/panasonic-logo.svg" alt="Panasonic">
+                    </div>
+
+                    <!-- Duplicates for Infinite Scroll -->
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/Roofsol.png"
                             alt="Roofsol"></div>
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/CleanMax.png"
                             alt="CleanMax"></div>
                     <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/SunInfra.png"
                             alt="SunInfra"></div>
+                    <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/Kirloskar.png"
+                            alt="Kirloskar"></div>
+                    <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/Hartek.png"
+                            alt="Hartek"></div>
+                    <div class="client-logo"><img src="https://pareesan.com/wp-content/uploads/2024/08/HFM.png"
+                            alt="HFM">
+                    </div>
+                    <div class="client-logo"><img src="https://www.acmesolar.in/assets/images/logo.png"
+                            alt="Acme Solar">
+                    </div>
+                    <div class="client-logo"><img
+                            src="https://amplussolar.com/wp-content/uploads/2021/05/Amplus-Solar-Logo.png"
+                            alt="M+ Solar">
+                    </div>
+                    <div class="client-logo"><img src="https://sunkind.in/wp-content/uploads/2023/05/Sunkind-Logo.png"
+                            alt="Sunkind Energy"></div>
+                    <div class="client-logo"><img src="https://fourthpartner.co/assets/img/logo.png"
+                            alt="Fourth Partner Energy"></div>
+                    <div class="client-logo"><img
+                            src="https://kalpapower.com/wp-content/uploads/2021/08/Kalpa-Power-Logo.png"
+                            alt="Kalpa Power">
+                    </div>
+                    <div class="client-logo"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Panasonic_logo_%28Blue%29.svg/1280px-Panasonic_logo_%28Blue%29.svg.png"
+                            alt="Panasonic"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CSR Section -->
-    <section id="csr" class="csr-section section-padding bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000"
-                        alt="CSR Initiatives" class="csr-img">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="section-tag">CSR & Sustainability</div>
-                    <h2 class="section-title">Empowering <span class="highlight">Communities</span></h2>
-                    <p class="section-desc">Beyond business, we are committed to social responsibility. We electrify
-                        rural schools and healthcare centers, bringing light to lives.</p>
-                    <a href="#" class="btn btn-outline-dark">Our Initiatives</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Locations & Presence -->
     <section class="locations-section section-padding">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <div class="section-tag">Our Presence</div>
-                <h2 class="section-title">Serving <span class="highlight">50+ Cities</span></h2>
+                <h2 class="section-title">Serving All Over <span class="highlight">India</span>
+                </h2>
             </div>
             <div class="locations-grid">
                 <div class="location-map">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/India_map_en.svg/1200px-India_map_en.svg.png"
-                        alt="India Map" class="india-map">
-                    <!-- Pins would be absolutely positioned here -->
-                    <div class="map-pin" style="top: 30%; left: 30%;"></div>
-                    <div class="map-pin" style="top: 40%; left: 40%;"></div>
-                    <div class="map-pin" style="top: 50%; left: 35%;"></div>
+                    <img src="https://www.mapsofindia.com/images2/india-map-2019.jpg" alt="India Map" class="india-map"
+                        loading="lazy">
+                    <!-- Pins for Key Locations -->
+                    <div class="map-pin" style="top: 28%; left: 35%;" title="Delhi / NCR"></div>
+                    <div class="map-pin" style="top: 45%; left: 25%;" title="Gujarat"></div>
+                    <div class="map-pin" style="top: 58%; left: 27%;" title="Maharashtra"></div>
+                    <div class="map-pin" style="top: 35%; left: 45%;" title="Uttar Pradesh"></div>
+                    <div class="map-pin" style="top: 72%; left: 37%;" title="Karnataka"></div>
+                    <div class="map-pin" style="top: 80%; left: 40%;" title="Tamil Nadu"></div>
+                    <div class="map-pin" style="top: 44%; left: 60%;" title="West Bengal"></div>
                 </div>
                 <div class="city-list">
                     <h4>Operating Locations</h4>
@@ -711,7 +891,8 @@
     <section class="community-section section-padding bg-light">
         <div class="container">
             <div class="section-header text-center mb-5">
-                <h2 class="section-title">Join the <span class="highlight">Solar Movement</span></h2>
+                <h2 class="section-title">Join the <span class="highlight">Solar Movement</span>
+                </h2>
             </div>
 
             <div class="community-grid">
@@ -739,7 +920,7 @@
                     <div class="webinar-date">
                         <i class="far fa-calendar-alt"></i> 25th Nov, 4:00 PM
                     </div>
-                    <a href="#" class="btn btn-sm btn-primary">Register Free</a>
+                    <a href="webinars.html" class="btn btn-sm btn-primary">Register Free</a>
                 </div>
 
                 <!-- Careers -->
@@ -816,7 +997,8 @@
                             <div class="form-group">
                                 <input type="text" placeholder="City" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
+                            <button type="submit" class="btn btn-primary btn-block">Get Free
+                                Quote</button>
                             <button type="button" class="btn-text" onclick="nextStep(1)">Back</button>
                         </div>
                     </form>
@@ -838,7 +1020,8 @@
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Typically, commercial solar plants have an ROI of 3-4 years, after which the electricity
+                        <p>Typically, commercial solar plants have an ROI of 3-4 years, after
+                            which the electricity
                             generated is essentially free for the next 20+ years.</p>
                     </div>
                 </div>
@@ -848,7 +1031,8 @@
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we have tie-ups with leading banks and NBFCs to provide easy financing options for solar
+                        <p>Yes, we have tie-ups with leading banks and NBFCs to provide easy
+                            financing options for solar
                             projects.</p>
                     </div>
                 </div>
@@ -858,7 +1042,8 @@
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Grid-connected systems shut down for safety. However, hybrid systems with battery backup can
+                        <p>Grid-connected systems shut down for safety. However, hybrid systems
+                            with battery backup can
                             continue to power essential loads.</p>
                     </div>
                 </div>
@@ -883,8 +1068,9 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" alt="Pareesan"
-                        class="footer-logo">
-                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        class="footer-logo" loading="lazy">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to
+                        quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -899,7 +1085,6 @@
                         <ul>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#safety">Safety</a></li>
-                            <li><a href="#csr">CSR</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </div>
@@ -914,17 +1099,20 @@
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
-                        <ul>
+                        <ul class="contact-info">
                             <li><i class="fas fa-phone"></i> +91 74170 96090</li>
                             <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor,
+                                Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
-                        href="#">Terms of Use</a></p>
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | Designed by<a href="https://veekode.in"
+                        target="_blank" style="color: inherit; text-decoration: none;">Veekode</a> | <a href="#">Privacy
+                        Policy</a> | <a href="#">Terms of Use</a></p>
             </div>
         </div>
     </footer>

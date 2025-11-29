@@ -1,0 +1,487 @@
+/* Calculator Page Specific Styles */
+
+/* Hero Section */
+.calc-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pareesan.com/wp-content/uploads/2024/08/solar-panels-roof.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 80px;
+    color: white;
+    margin-top: -80px;
+}
+
+.calc-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.calc-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Calculator Cards */
+.calc-input-card,
+.calc-results-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 15px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-with-icon input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Bill Display & Slider */
+.bill-display {
+    display: flex;
+    align-items: center;
+    background: var(--light-bg);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.bill-display .currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-right: 5px;
+}
+
+.bill-display input {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    width: 100%;
+}
+
+.bill-display input:focus {
+    outline: none;
+}
+
+.range-slider-container input[type=range],
+.emi-slider-box input[type=range] {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.range-slider-container input[type=range]::-webkit-slider-thumb,
+.emi-slider-box input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.calc-note {
+    display: flex;
+    gap: 10px;
+    background: #eef7ff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+.calc-note i {
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+/* Results Styles */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 15px;
+}
+
+.results-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    color: #555;
+}
+
+.system-size-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.system-size-badge i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.system-size-badge .badge-content {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.system-size-badge span {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.system-size-badge strong {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    line-height: 1.1;
+}
+
+.roof-area-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.roof-icon {
+    width: 40px;
+    height: 40px;
+    background: #eef7ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.roof-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.roof-details span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.roof-details strong {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+.calc-note-warning {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.calc-note-warning a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Savings Section */
+.savings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.savings-item {
+    background: var(--light-bg);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.savings-item.highlight {
+    background: #eef7ff;
+    border-color: var(--primary-color);
+}
+
+.savings-item .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.savings-item .value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.savings-item.highlight .value {
+    color: var(--primary-color);
+}
+
+.guaranteed-savings {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #28a745;
+    background: #f0fff4;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Investment Breakdown */
+.investment-breakdown,
+.emi-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.investment-breakdown h4,
+.emi-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.breakdown-row.subsidy {
+    color: #28a745;
+}
+
+.breakdown-row.total {
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.roi-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.roi-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.roi-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.roi-text span {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.roi-text strong {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+/* EMI Section */
+.highlight-green {
+    color: #28a745;
+}
+
+.emi-slider-box {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.emi-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--primary-color);
+}
+
+.emi-result strong {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+/* Impact Section */
+.impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.impact-box {
+    text-align: center;
+    padding: 15px 5px;
+    background: #f0fff4;
+    border-radius: 10px;
+    color: #2e7d32;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.impact-box i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.impact-box span {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.impact-box small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+/* Disclaimer */
+.disclaimer-box {
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.4;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.disclaimer-box h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.disclaimer-box p {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .savings-grid,
+    .roi-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .calc-title {
+        font-size: 2rem;
+    }
+}
