@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Free Solar Consultation | Pareesan Services</title>
-    <meta name="description"
-        content="Request a free solar consultation and quote from Pareesan Services. Expert advice on rooftop solar, commercial plants, and more.">
+    <title>PV Modules - Pareesan Services Pvt Ltd</title>
     <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
+    <meta name="description"
+        content="Explore our premium range of Solar PV Modules including Bifacial and Monocrystalline panels.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +25,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .consult-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1548613053-220e75370368?auto=format&fit=crop&q=80&w=1000');
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1592833159057-65a2845730bd?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 40vh;
-            min-height: 300px;
+            height: 50vh;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -38,83 +38,23 @@
             color: var(--white);
         }
 
-        .consult-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .consult-info {
-            flex: 1;
-            min-width: 300px;
-            background: var(--primary-green);
-            color: var(--white);
+        .tech-detail-card {
+            background: #fff;
             padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .consult-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .consult-features {
-            list-style: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
+            transition: transform 0.3s;
         }
 
-        .consult-features li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
+        .tech-detail-card:hover {
+            transform: translateY(-5px);
         }
 
-        .consult-form-wrapper {
-            flex: 1.5;
-            min-width: 350px;
-            padding: 40px;
-        }
-
-        .consult-form .form-group {
+        .tech-icon-large {
+            font-size: 3rem;
+            color: var(--primary-blue);
             margin-bottom: 20px;
-        }
-
-        .consult-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .consult-form input,
-        .consult-form select,
-        .consult-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .consult-form input:focus,
-        .consult-form select:focus,
-        .consult-form textarea:focus {
-            border-color: var(--primary-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(2, 119, 189, 0.1);
         }
     </style>
 </head>
@@ -122,9 +62,9 @@
 <body>
 
     <!-- Header -->
-    <header class="header header-internal">
+    <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo" aria-label="Pareesan Home">
+            <a href="index.html" class="logo">
                 <img src="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png"
                     alt="Pareesan Services" class="logo-img">
             </a>
@@ -168,7 +108,7 @@
 
             <div class="header-right">
                 <a href="index.html#contact" class="btn btn-outline-dark header-btn">Contact Us</a>
-                <a href="consultation.html" class="btn btn-primary header-btn">Get Quote</a>
+                <a href="javascript:void(0)" onclick="openLeadForm()" class="btn btn-primary header-btn">Get QuoteQuote
                 <button class="mobile-toggle" aria-label="Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -188,7 +128,8 @@
         </div>
         <ul class="mobile-nav-links">
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="calc.html">Calculator</a></li>
             <li><a href="index.html#contact">Contact</a></li>
@@ -196,77 +137,59 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="consult-hero">
+    <section class="page-hero">
         <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Start Your Solar <span class="highlight-text">Journey</span></h1>
-            <p class="hero-desc">Get a customized solar proposal designed for your specific needs.</p>
+            <h1 class="hero-title">High Efficiency <span class="highlight-text">PV Modules</span></h1>
+            <p class="hero-desc">Powering the future with Tier-1 bifacial and mono-perc solar panels.</p>
         </div>
     </section>
 
-    <!-- Consultation Form Section -->
-    <section class="section-padding bg-light">
+    <!-- Content Section -->
+    <section class="section-padding">
         <div class="container">
-            <div class="consult-container" data-aos="fade-up">
-                <div class="consult-info">
-                    <h3>What You Get</h3>
-                    <ul class="consult-features">
-                        <li><i class="fas fa-check-circle"></i> Free Site Survey</li>
-                        <li><i class="fas fa-check-circle"></i> Custom System Design</li>
-                        <li><i class="fas fa-check-circle"></i> ROI Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Best Price Guarantee</li>
-                        <li><i class="fas fa-check-circle"></i> Lifetime Support</li>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1592833159057-65a2845730bd?auto=format&fit=crop&q=80&w=800"
+                        class="img-fluid rounded shadow" alt="Bifacial Module">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-tag">Technology</div>
+                    <h2 class="section-title">Bifacial <span class="highlight">Modules</span></h2>
+                    <p class="section-desc">
+                        Our bifacial modules generate power from both the front and rear sides, increasing energy yield
+                        by up to 30%.
+                        Ideal for ground-mounted projects and reflective rooftops.
+                    </p>
+                    <ul class="check-list mt-3">
+                        <li><i class="fas fa-check-circle text-primary"></i> 550W+ Power Output</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> 30-Year Linear Power Warranty</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Enhanced Durability</li>
                     </ul>
-                    <p>Join 500+ happy customers who are saving millions on electricity bills.</p>
                 </div>
-                <div class="consult-form-wrapper">
-                    <h2 class="mb-4">Request a Quote</h2>
-                    <form class="consult-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="billAmount">Monthly Electricity Bill (Approx)</label>
-                            <select id="billAmount">
-                                <option>₹1,000 - ₹3,000</option>
-                                <option>₹3,000 - ₹5,000</option>
-                                <option>₹5,000 - ₹10,000</option>
-                                <option>Above ₹10,000</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="propertyType">Property Type</label>
-                            <select id="propertyType">
-                                <option>Residential (Home)</option>
-                                <option>Commercial (Office/Factory)</option>
-                                <option>Institutional (School/Hospital)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" id="city" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Get My Free Quote</button>
-                    </form>
+            </div>
+
+            <div class="row align-items-center mb-5 flex-row-reverse">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
+                        class="img-fluid rounded shadow" alt="Monocrystalline Module">
                 </div>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="section-tag">Efficiency</div>
+                    <h2 class="section-title">Monocrystalline <span class="highlight">PERC</span></h2>
+                    <p class="section-desc">
+                        Advanced Mono PERC technology ensures high efficiency even in low-light conditions.
+                        Perfect for residential rooftops where space is premium.
+                    </p>
+                    <ul class="check-list mt-3">
+                        <li><i class="fas fa-check-circle text-primary"></i> 21%+ Efficiency</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Better Temperature Coefficient</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Sleek Aesthetic Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="catalogue.html" class="btn btn-primary btn-lg">View Full Catalogue</a>
             </div>
         </div>
     </section>
@@ -281,11 +204,15 @@
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links-group">
@@ -293,6 +220,8 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="clients.html">Our Clients</a></li>
                             <li><a href="careers.html">Careers</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="partners.html">Partner With Us</a></li>
@@ -303,6 +232,8 @@
                         <h4>Solutions</h4>
                         <ul>
                             <li><a href="solutions.html">Solar Solutions</a></li>
+                            <li><a href="hybrid-solar.html">Hybrid Solar</a></li>
+                            <li><a href="load-calculator.html">Load Calculator</a></li>
                             <li><a href="solar-in-delhi.html">Solar in Delhi</a></li>
                             <li><a href="rooftop-solar.html">Rooftop Solar</a></li>
                             <li><a href="ground-mount.html">Ground Mount</a></li>
@@ -321,7 +252,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a
+                        href="privacy.html">Privacy
+                        Policy</a> | <a href="terms.html">Terms of Use</a></p>
             </div>
         </div>
     </footer>
@@ -329,12 +262,6 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
 </body>
 
 </html>

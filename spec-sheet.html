@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar EPC Services - Pareesan Services</title>
-    <meta name="description"
-        content="Comprehensive Solar EPC services by Pareesan. From design and engineering to procurement and construction.">
+    <title>Technical Specifications - Pareesan Services</title>
     <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
 
     <!-- Fonts -->
@@ -25,17 +23,76 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            min-height: 400px;
+        .spec-hero {
+            background: var(--primary-dark);
+            height: 40vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .spec-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s;
+        }
+
+        .spec-card:hover {
+            background: #f9f9f9;
+        }
+
+        .spec-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .spec-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .download-btn {
+            background: rgba(2, 119, 189, 0.1);
+            color: var(--primary-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -79,8 +136,8 @@
                     <li class="nav-item has-dropdown">
                         <a href="calc.html" class="nav-link">Calculators</a>
                         <div class="dropdown-menu">
-                             <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
-                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
+                            <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
+                            <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
@@ -99,7 +156,7 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
@@ -108,58 +165,66 @@
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="solutions.html">Services</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="calc.html">Calculators</a></li>
+            <li><a href="calc.html">Calculator</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Solar <span class="highlight-text">EPC</span></h1>
-            <p class="hero-desc">Engineering, Procurement, and Construction excellence.</p>
+    <!-- Hero -->
+    <section class="spec-hero">
+        <div class="container" data-aos="zoom-in">
+            <h1>Product Specifications</h1>
+            <p>Technical datasheets and manuals for our solar components.</p>
         </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- Content -->
     <section class="section-padding">
-        <div class="container text-center">
-            <div class="section-header mb-5" data-aos="fade-up">
-                <div class="section-tag">Our Expertise</div>
-                <h2 class="section-title">End-to-End <span class="highlight">Solutions</span></h2>
+        <div class="container">
+            <div class="spec-container border rounded overflow-hidden shadow-sm" data-aos="fade-up">
+                <div class="spec-card">
+                    <div class="spec-info">
+                        <h3>550W Bifacial Mono PERC Module</h3>
+                        <p>Efficiency: 21.5% | Warranty: 25 Years</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo Download Started')" class="download-btn"
+                        title="Download PDF"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-info">
+                        <h3>Hybrid Inverter 5kW - 10kW</h3>
+                        <p>User Manual & Installation Guide</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo Download Started')" class="download-btn"
+                        title="Download PDF"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-info">
+                        <h3>On-Grid String Inverter Series</h3>
+                        <p>Technical Datasheet</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo Download Started')" class="download-btn"
+                        title="Download PDF"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-info">
+                        <h3>Solar Structure Mounting Kit</h3>
+                        <p>Assembly Instructions (Rooftop)</p>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo Download Started')" class="download-btn"
+                        title="Download PDF"><i class="fas fa-download"></i></a>
+                </div>
             </div>
-            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
-                We provide complete turnkey solutions for solar power projects. From initial site survey and feasibility
-                analysis to design, engineering, procurement, construction, and commissioning.
-            </p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-drafting-compass fa-3x text-success mb-3"></i>
-                        <h4>Engineering</h4>
-                        <p>Detailed system design and engineering for maximum efficiency.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
-                        <h4>Procurement</h4>
-                        <p>Sourcing top-tier components from trusted global manufacturers.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-hard-hat fa-3x text-success mb-3"></i>
-                        <h4>Construction</h4>
-                        <p>Professional installation with strict adherence to safety and quality standards.</p>
-                    </div>
-                </div>
+
+            <div class="text-center mt-5">
+                <p>Need custom requirements? <a href="consultation.html"
+                        style="color: var(--primary-blue); font-weight: 600;">Contact our engineering team.</a></p>
             </div>
-            <a href="consultation.html" class="btn btn-primary mt-5">Start Your Project</a>
         </div>
     </section>
 
@@ -172,44 +237,12 @@
                         class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook"
-                            target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn"
-                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i
-                                class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
+                <!-- Simplified footer for this page -->
                 <div class="footer-links-group">
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="team.html">Our Team</a></li>
-                            <li><a href="careers.html">Careers</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="partners.html">Partner With Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="solutions.html">Solar Solutions</a></li>
-                            <li><a href="hybrid-solar.html">Hybrid Solar</a></li>
-                            <li><a href="load-calculator.html">Load Calculator</a></li>
-                            <li><a href="solar-in-delhi.html">Solar in Delhi</a></li>
-                            <li><a href="om-services.html">O&M Services</a></li>
-                        </ul>
-                    </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
                         <ul class="contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
-                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
                             <li><i class="fas fa-phone"></i> +91 74170 96090</li>
                             <li><i class="fas fa-envelope"></i> info@pareesan.com</li>
                         </ul>
@@ -217,8 +250,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
-                
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">Privacy
+                        Policy</a></p>
             </div>
         </div>
     </footer>
@@ -226,12 +259,6 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
 </body>
 
 </html>

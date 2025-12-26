@@ -8,6 +8,33 @@ document.addEventListener('DOMContentLoaded', function () {
     const emiSlider = document.getElementById('emiSlider');
     const emiTenureDisplay = document.getElementById('emiTenureDisplay');
 
+    // Sync Input and Slider
+    billInput.addEventListener('input', function () {
+        let val = parseInt(this.value);
+        if (val < 500) val = 500;
+        billSlider.value = val;
+        calculateSolar();
+    });
+
+    billSlider.addEventListener('input', function () {
+        billInput.value = this.value;
+        calculateSolar();
+    });
+
+    emiSlider.addEventListener('input', function () {
+        emiTenureDisplay.innerText = this.value + (this.value == 1 ? " year" : " years");
+        calculateSolar();
+    });
+
+    // Pincode Logic (Real API)
+    pincodeInput.addEventListener('input', function () {
+        const pin = this.value;
+        if (pin.length === 6 && /^\d+$/.test(pin)) {
+            fetchCityFromPincode(pin);
+        } else {
+            pincodeError.innerText = "";
+        }
+    });
     // Header Scroll Effect
     const header = document.querySelector('.header');
     if (header) {
@@ -42,49 +69,46 @@ document.addEventListener('DOMContentLoaded', function () {
     const treesPlantedEl = document.getElementById('treesPlanted');
     const distanceDrivenEl = document.getElementById('distanceDriven');
 
-    // Constants & Calibration
-    // Calibration based on user example: ₹10,694 bill -> 10.26 kW system
-    const BILL_TO_KW_RATIO = 10.26 / 10694;
-    const ROOF_AREA_PER_KW = 608 / 10.26; // ~59.2 sq ft per kW
-    const COST_PER_KW = 588000 / 10.26; // ~₹57,310 per kW
+    // Constants & Calibration based on User Data Analysis
+    // Analysis of screenshots:
+    // 1. Bill ₹3000 -> 3.78kW (Ratio: 0.00126)
+    // 2. Bill ₹3700 -> 4.86kW (Ratio: 0.00131)
+    // 3. Bill ₹5400 -> 7.02kW (Ratio: 0.0013)
+    // using avg ratio 0.0013
+    const BILL_TO_KW_RATIO = 0.0013;
+
+    // Roof Area: 224/3.78 = 59.25, 288/4.86 = 59.25. Constant.
+    const ROOF_AREA_PER_KW = 59.26;
+
+    // Savings: 
+    // Monthly: 3940/3.78 = 1042.32
+    // Yearly: 47280/3.78 = 12507.9
+    const MONTHLY_SAVINGS_PER_KW = 1042.33;
+    const YEARLY_SAVINGS_PER_KW = 12508;
+
+    // Cost Tiers (Keeping previous market estimates as screenshots cost isn't explicit per kW)
+    // < 3kW: ~₹75,000/kW
+    // 3kW - 10kW: ~₹60,000/kW
+    // > 10kW: ~₹55,000/kW
+    function getSystemCost(capacityKw) {
+        if (capacityKw <= 3) return capacityKw * 75000;
+        if (capacityKw <= 10) return capacityKw * 60000;
+        return capacityKw * 55000;
+    }
 
     // Subsidies (PM Surya Ghar 2025)
-    const SUBSIDY_1KW = 30000;
-    const SUBSIDY_2KW = 60000;
-    const SUBSIDY_MAX = 78000;
-    const STATE_SUBSIDY_FLAT = 30000; // Assuming flat state subsidy for now based on example
+    function getCentralSubsidy(capacityKw) {
+        if (capacityKw <= 2) {
+            return capacityKw * 30000;
+        } else if (capacityKw <= 3) {
+            return 60000 + (capacityKw - 2) * 18000;
+        } else {
+            return 78000;
+        }
+    }
 
     // EMI
-    const INTEREST_RATE = 12; // % p.a.
-
-    // Sync Input and Slider
-    billInput.addEventListener('input', function () {
-        let val = parseInt(this.value);
-        if (val < 500) val = 500;
-        billSlider.value = val;
-        calculateSolar();
-    });
-
-    billSlider.addEventListener('input', function () {
-        billInput.value = this.value;
-        calculateSolar();
-    });
-
-    emiSlider.addEventListener('input', function () {
-        emiTenureDisplay.innerText = this.value + (this.value == 1 ? " year" : " years");
-        calculateSolar();
-    });
-
-    // Pincode Logic (Real API)
-    pincodeInput.addEventListener('input', function () {
-        const pin = this.value;
-        if (pin.length === 6 && /^\d+$/.test(pin)) {
-            fetchCityFromPincode(pin);
-        } else {
-            pincodeError.innerText = "";
-        }
-    });
-
+    // Pincode API Function
     async function fetchCityFromPincode(pincode) {
         try {
             pincodeError.innerText = "Fetching city...";
@@ -109,46 +133,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function formatCurrency(num) {
-        return new Intl.NumberFormat('en-IN', {
-            style: 'currency',
-            currency: 'INR',
-            maximumFractionDigits: 0
-        }).format(num);
-    }
+    const INTEREST_RATE = 10.5; // % p.a. (Typical solar loan rate)
 
     function calculateSolar() {
         const monthlyBill = parseInt(billInput.value);
         const tenureYears = parseInt(emiSlider.value);
 
-        // 1. System Size
+        // 1. Calculate Required System Size
         let systemSize = monthlyBill * BILL_TO_KW_RATIO;
-        // Round to 2 decimal places
-        systemSize = Math.round(systemSize * 100) / 100;
+
+        // Round to 2 decimal places, min 1kW
+        systemSize = Math.max(1, Math.round(systemSize * 100) / 100);
 
         // 2. Roof Area
         const roofArea = Math.round(systemSize * ROOF_AREA_PER_KW);
 
         // 3. Financials
-        const totalCost = Math.round(systemSize * COST_PER_KW);
+        const totalCost = Math.round(getSystemCost(systemSize));
+        let centralSubsidy = Math.round(getCentralSubsidy(systemSize));
 
-        // Central Subsidy
-        // Central Subsidy (PM Surya Ghar 2025)
-        // Rule: ₹30,000/kW for first 2 kW. ₹18,000/kW for additional capacity up to 3 kW. Max ₹78,000.
-        let centralSubsidy = 0;
-        if (systemSize <= 2) {
-            centralSubsidy = systemSize * 30000;
-        } else if (systemSize <= 3) {
-            centralSubsidy = 60000 + (systemSize - 2) * 18000;
-        } else {
-            centralSubsidy = 78000;
-        }
-
-        // Cap subsidy if it exceeds cost (unlikely but safe)
+        // Cap subsidy if it exceeds cost
         centralSubsidy = Math.min(centralSubsidy, totalCost);
 
-        // State Subsidy (Mock logic: UP/Haryana style, max 30k)
-        // Many states like UP give ₹15,000/kW up to max ₹30,000.
+        // State Subsidy (Additional ~₹15k-30k in some states, keep conservative)
         let stateSubsidy = 0;
         if (systemSize > 0) {
             stateSubsidy = Math.min(systemSize * 15000, 30000);
@@ -156,26 +163,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const netCost = totalCost - centralSubsidy - stateSubsidy;
 
-        // 4. Savings
-        // User example: ₹10,694 bill -> ₹10,694 monthly savings (100% offset)
-        const monthlySavings = monthlyBill;
-        const annualSavings = monthlySavings * 12;
-        const lifetimeSavings = annualSavings * 25;
+        // 4. Savings (SolarSquare Model: 1% Degradation, 3% Inflation)
+        const annualSavingsStart = Math.round(systemSize * YEARLY_SAVINGS_PER_KW);
+
+        let lifetimeSavings = 0;
+        let currentAnnualSavings = annualSavingsStart;
+
+        for (let year = 1; year <= 25; year++) {
+            lifetimeSavings += currentAnnualSavings;
+            // Combined effect: degradation reduces gen but inflation increases value
+            // Gen * 0.99, Tariff * 1.03 -> Savings * (0.99 * 1.03) = Savings * 1.0197
+            currentAnnualSavings *= 1.0197;
+        }
+
+        const annualSavings = annualSavingsStart;
+        const monthlySavings = Math.round(systemSize * MONTHLY_SAVINGS_PER_KW);
+        lifetimeSavings = Math.round(lifetimeSavings);
 
         // 5. ROI
-        // ROI % = (Annual Savings / Net Cost) * 100
+        // ROI % = (Year 1 Savings / Net Cost) * 100
         const roiPercent = (annualSavings / netCost) * 100;
 
         // 6. EMI
-        // Down Payment logic from user example:
-        // Total Cost: 588k. Subsidy: 108k (78+30). Net: 480k.
-        // User example shows "Minimum Down Payment ₹108,000" and "Subsidy -₹108,000" -> Net Down Payment ₹0.
-        // This implies the subsidy is used as the down payment.
+        // Assumption: Subsidy is credited later, so loan is on Net Cost + Subsidy usually, 
+        // but for "Zero Investment" marketing, we often show Net Cost financing.
+        // Let's stick to the previous pattern: Down Payment = Subsidy Amount (Client pays upfront, gets back)
+        // OR Net Cost financing.
+        // User's previous logic: "Net Down Payment 0" -> Subsidy adjusted.
         const totalSubsidy = centralSubsidy + stateSubsidy;
-        const downPayment = totalSubsidy; // Subsidy covers down payment
-        const netDownPayment = 0;
+        const downPayment = totalSubsidy;
 
-        // Loan Amount = Net Cost
+        // Loan Amount = Net Cost (Assumption: Client finances the rest)
         const loanAmount = netCost;
         const monthlyInterest = INTEREST_RATE / 12 / 100;
         const months = tenureYears * 12;
@@ -183,12 +201,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const emi = (loanAmount * monthlyInterest * Math.pow(1 + monthlyInterest, months)) / (Math.pow(1 + monthlyInterest, months) - 1);
 
         // 7. Environmental Impact
-        // User example: 10.26kW -> 12,066 kg CO2
-        // Ratio: 12066 / 10.26 = ~1176 kg/kW/year? No, likely lifetime or specific period.
-        // Let's use the ratio from the example directly.
-        const co2Mitigated = Math.round(systemSize * (12066 / 10.26));
-        const treesPlanted = Math.round(systemSize * (402 / 10.26));
-        const distanceDriven = Math.round(systemSize * (107730 / 10.26));
+        // User example: 10.26kW -> 12,066 kg CO2. Ratio: ~1176 kg/kW
+        const co2Mitigated = Math.round(systemSize * 1176);
+        const treesPlanted = Math.round(systemSize * 40); // Approx 
+        const distanceDriven = Math.round(systemSize * 10500); // Approx
 
         // Update UI
         recSystemSize.innerText = systemSize.toFixed(2) + " kW";
@@ -207,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         downPaymentEl.innerText = formatCurrency(downPayment);
         subsidyAdjustmentEl.innerText = "-" + formatCurrency(totalSubsidy);
-        // netDownPayment is static 0 in UI for now as per design pattern
 
         monthlyEMIEl.innerText = formatCurrency(Math.round(emi));
 

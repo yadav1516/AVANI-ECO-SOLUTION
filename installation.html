@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Free Solar Consultation | Pareesan Services</title>
+    <title>Installation Services - Pareesan Services</title>
     <meta name="description"
-        content="Request a free solar consultation and quote from Pareesan Services. Expert advice on rooftop solar, commercial plants, and more.">
+        content="Expert Solar Installation services by Pareesan. Professional, safe, and efficient rooftop and ground-mount solar installations.">
     <link rel="icon" href="https://pareesan.com/wp-content/uploads/2024/08/LOGO-with-New-Tagline.png" type="image/png">
 
     <!-- Fonts -->
@@ -25,96 +25,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .consult-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1548613053-220e75370368?auto=format&fit=crop&q=80&w=1000');
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 40vh;
-            min-height: 300px;
+            height: 50vh;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-        }
-
-        .consult-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .consult-info {
-            flex: 1;
-            min-width: 300px;
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .consult-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .consult-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .consult-features li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-        }
-
-        .consult-form-wrapper {
-            flex: 1.5;
-            min-width: 350px;
-            padding: 40px;
-        }
-
-        .consult-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .consult-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .consult-form input,
-        .consult-form select,
-        .consult-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .consult-form input:focus,
-        .consult-form select:focus,
-        .consult-form textarea:focus {
-            border-color: var(--primary-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(2, 119, 189, 0.1);
         }
     </style>
 </head>
@@ -145,6 +66,7 @@
                         <a href="solutions.html" class="nav-link">Services</a>
                         <div class="dropdown-menu">
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
+                            <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="rooftop-solar.html" class="dropdown-item">Rooftop Solar</a>
                             <a href="ground-mount.html" class="dropdown-item">Ground Mount</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
@@ -158,8 +80,8 @@
                     <li class="nav-item has-dropdown">
                         <a href="calc.html" class="nav-link">Calculators</a>
                         <div class="dropdown-menu">
-                             <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
-                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
+                            <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
+                            <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
@@ -187,87 +109,60 @@
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="team.html">Our Team</a></li>
             <li><a href="careers.html">Careers</a></li>
+            <li><a href="solutions.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="calc.html">Calculators</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
-    <section class="consult-hero">
+    <section class="page-hero">
         <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Start Your Solar <span class="highlight-text">Journey</span></h1>
-            <p class="hero-desc">Get a customized solar proposal designed for your specific needs.</p>
+            <h1 class="hero-title">Installation <span class="highlight-text">Services</span></h1>
+            <p class="hero-desc">Precision, Safety, and Quality in every solar module installed.</p>
         </div>
     </section>
 
-    <!-- Consultation Form Section -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="consult-container" data-aos="fade-up">
-                <div class="consult-info">
-                    <h3>What You Get</h3>
-                    <ul class="consult-features">
-                        <li><i class="fas fa-check-circle"></i> Free Site Survey</li>
-                        <li><i class="fas fa-check-circle"></i> Custom System Design</li>
-                        <li><i class="fas fa-check-circle"></i> ROI Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Best Price Guarantee</li>
-                        <li><i class="fas fa-check-circle"></i> Lifetime Support</li>
-                    </ul>
-                    <p>Join 500+ happy customers who are saving millions on electricity bills.</p>
+    <!-- Content Section -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <div class="section-header mb-5" data-aos="fade-up">
+                <div class="section-tag">Our Process</div>
+                <h2 class="section-title">Seamless <span class="highlight">Installation</span></h2>
+            </div>
+            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
+                Our certified installation teams ensure your solar system is set up for maximum performance and
+                longevity.
+                We handle everything from structural mounting to electrical connections with meticulous attention to
+                detail.
+            </p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 border rounded bg-light h-100">
+                        <i class="fas fa-tools fa-3x text-success mb-3"></i>
+                        <h4>Structural Mounting</h4>
+                        <p>Robust and weather-resistant mounting structures tailored to your roof type.</p>
+                    </div>
                 </div>
-                <div class="consult-form-wrapper">
-                    <h2 class="mb-4">Request a Quote</h2>
-                    <form class="consult-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="billAmount">Monthly Electricity Bill (Approx)</label>
-                            <select id="billAmount">
-                                <option>₹1,000 - ₹3,000</option>
-                                <option>₹3,000 - ₹5,000</option>
-                                <option>₹5,000 - ₹10,000</option>
-                                <option>Above ₹10,000</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="propertyType">Property Type</label>
-                            <select id="propertyType">
-                                <option>Residential (Home)</option>
-                                <option>Commercial (Office/Factory)</option>
-                                <option>Institutional (School/Hospital)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" id="city" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Get My Free Quote</button>
-                    </form>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 border rounded bg-light h-100">
+                        <i class="fas fa-plug fa-3x text-success mb-3"></i>
+                        <h4>Electrical Wiring</h4>
+                        <p>Safe and efficient DC/AC wiring adhering to international safety codes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 border rounded bg-light h-100">
+                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                        <h4>Testing & Commissioning</h4>
+                        <p>Rigorous testing to ensure the system operates at peak efficiency from day one.</p>
+                    </div>
                 </div>
             </div>
+            <a href="consultation.html" class="btn btn-primary mt-5">Book Installation</a>
         </div>
     </section>
 
@@ -281,11 +176,15 @@
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links-group">
@@ -293,19 +192,19 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
                             <li><a href="careers.html">Careers</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="partners.html">Partner With Us</a></li>
-                            <li><a href="reviews.html">Reviews</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Solutions</h4>
                         <ul>
                             <li><a href="solutions.html">Solar Solutions</a></li>
+                            <li><a href="installation.html">Installation</a></li>
+                            <li><a href="load-calculator.html">Load Calculator</a></li>
                             <li><a href="solar-in-delhi.html">Solar in Delhi</a></li>
-                            <li><a href="rooftop-solar.html">Rooftop Solar</a></li>
-                            <li><a href="ground-mount.html">Ground Mount</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
                         </ul>
                     </div>
@@ -321,7 +220,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">Privacy
+                        Policy</a> | <a href="terms.html">Terms of Use</a></p>
+
             </div>
         </div>
     </footer>

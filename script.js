@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS Animation Library
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+    }
 
     // Preloader
     const preloader = document.querySelector('.preloader');
@@ -20,36 +22,95 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu
+    // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.mobile-menu-overlay');
     const closeMenu = document.querySelector('.close-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    const overlay = document.querySelector('.mobile-menu-overlay');
 
-    function toggleMenu() {
-        mobileMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    function openMenu() {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
-    mobileToggle.addEventListener('click', toggleMenu);
-    closeMenu.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+    function closeMenuFunc() {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
+    if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+    if (closeMenu) closeMenu.addEventListener('click', closeMenuFunc);
+    if (overlay) overlay.addEventListener('click', closeMenuFunc);
+
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenuFunc));
+
+
+    /* ===========================
+       Lead Generation Modal Logic
+       =========================== */
+    const leadModal = document.getElementById('leadModal');
+    // Only run if modal exists on this page (index.html)
+    if (leadModal) {
+        const closeModalBtn = leadModal.querySelector('.close-modal');
+        // Initial Flex setup to allow display:flex behavior via class
+        leadModal.style.display = 'flex';
+
+        // Auto-show logic: Wait for preloader (2000ms) or show instantly if no preloader
+        const hasPreloader = document.querySelector('.preloader');
+        const delay = hasPreloader ? 2500 : 500;
+
+        setTimeout(() => {
+            leadModal.classList.add('show');
+        }, delay);
+
+        // Close on 'X' click
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                leadModal.classList.remove('show');
+                setTimeout(() => {
+                    leadModal.style.display = 'none';
+                }, 400);
+            });
+        }
+
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === leadModal) {
+                leadModal.classList.remove('show');
+                setTimeout(() => {
+                    leadModal.style.display = 'none';
+                }, 400);
+            }
+        });
+
+        // Handle Form Submit (Prevent Reset for demo)
+        const leadForm = document.getElementById('leadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! We will contact you shortly.');
+                leadModal.classList.remove('show');
+                setTimeout(() => {
+                    leadModal.style.display = 'none';
+                }, 400);
+            });
+        }
+    }
 
     // Header Scroll Effect
     const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
     }, { passive: true });
 
@@ -91,23 +152,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Impact Dashboard Counters
+    /* ===========================
+       Impact Dashboard Counters
+       =========================== */
     const impactSection = document.querySelector('.impact-dashboard');
     const impactCounters = document.querySelectorAll('.impact-number');
     let impactStarted = false;
 
     const startImpactCounters = () => {
+        if (impactStarted) return;
+        impactStarted = true;
+
         impactCounters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const duration = 2500;
-            const increment = target / (duration / 16);
+            const duration = 2000;
+            const increment = Math.ceil(target / (duration / 20));
 
             let current = 0;
             const updateCounter = () => {
                 current += increment;
                 if (current < target) {
-                    counter.innerText = Math.ceil(current).toLocaleString();
-                    requestAnimationFrame(updateCounter);
+                    counter.innerText = current.toLocaleString();
+                    setTimeout(updateCounter, 20);
                 } else {
                     counter.innerText = target.toLocaleString() + '+';
                 }
@@ -117,13 +183,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (impactSection) {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !impactStarted) {
+        // Robust Trigger: Overlapping check + Visibility check
+        const impactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Trigger if *any* part is visible
+                if (entry.isIntersecting) {
+                    startImpactCounters();
+                    impactObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // 10% visible
+
+        impactObserver.observe(impactSection);
+
+        // Fallback: Check visibility on load (in case already in view)
+        setTimeout(() => {
+            const rect = impactSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
                 startImpactCounters();
-                impactStarted = true;
             }
-        }, { threshold: 0.5 });
-        observer.observe(impactSection);
+        }, 500);
     }
 
     // Solar Calculator Logic
@@ -136,12 +215,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const co2Saved = document.getElementById('co2Saved');
 
     function calculateSolar() {
+        if (!billInput || !areaInput) return; // Guard clause
         const bill = parseInt(billInput.value);
         const area = parseInt(areaInput.value);
 
         // Update UI values
-        billValue.innerText = bill;
-        areaValue.innerText = area;
+        if (billValue) billValue.innerText = bill;
+        if (areaValue) areaValue.innerText = area;
 
         // Simple Logic: 1kW requires ~100 sqft and saves ~Rs. 12000/year
         // System size based on bill (approx Rs. 8/unit, 4 units/kW/day)
@@ -166,10 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const carKm = Math.round(co2 * 1000 / 0.12); // Approx 0.12kg CO2 per km for a car
 
         // Update Results
-        systemSize.innerText = recommendedKw + ' kW';
-        annualSavings.innerText = savings.toLocaleString();
-        co2Saved.innerText = co2;
-        document.getElementById('carKm').innerText = carKm.toLocaleString();
+        if (systemSize) systemSize.innerText = recommendedKw + ' kW';
+        if (annualSavings) annualSavings.innerText = savings.toLocaleString();
+        if (co2Saved) co2Saved.innerText = co2;
+        if (document.getElementById('carKm')) document.getElementById('carKm').innerText = carKm.toLocaleString();
     }
 
     if (billInput && areaInput) {
@@ -179,94 +259,66 @@ document.addEventListener('DOMContentLoaded', () => {
         calculateSolar();
     }
 
-    // Lead Modal Logic
+    // Lead Modal Helpers ( Global Scope required?)
     window.openLeadForm = function () {
-        document.getElementById('leadModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
+        const lm = document.getElementById('leadModal');
+        if (lm) {
+            lm.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     window.closeLeadForm = function () {
-        document.getElementById('leadModal').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    window.nextStep = function (step) {
-        document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-        document.getElementById('step' + step).classList.add('active');
-    }
-
-    // Close modal on outside click
-    document.getElementById('leadModal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('leadModal')) {
-            closeLeadForm();
+        const lm = document.getElementById('leadModal');
+        if (lm) {
+            lm.classList.remove('active');
+            document.body.style.overflow = '';
         }
-    });
-
-    // Project Filters (Index Page)
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-card'); // Updated selector to match new class
-
-    // Function to filter projects
-    function filterProjects(filterValue) {
-        projectItems.forEach(item => {
-            const hasClass = item.classList.contains(filterValue);
-            const categoryAttr = item.getAttribute('data-category');
-
-            if (filterValue === 'all' || hasClass || categoryAttr === filterValue) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 50);
-            } else {
-                item.style.display = 'none';
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-            }
-        });
     }
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active to clicked
-            btn.classList.add('active');
+    // Project Filters
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-card');
 
-            const filterValue = btn.getAttribute('data-filter');
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filterValue = btn.getAttribute('data-filter');
 
-            projectItems.forEach(item => {
-                // Check for category in classList (legacy) or data-category attribute
-                const hasClass = item.classList.contains(filterValue);
-                const categoryAttr = item.getAttribute('data-category');
-
-                if (filterValue === 'all' || hasClass || categoryAttr === filterValue) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    item.style.display = 'none';
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                }
+                projectItems.forEach(item => {
+                    const hasClass = item.classList.contains(filterValue);
+                    const categoryAttr = item.getAttribute('data-category');
+                    if (filterValue === 'all' || hasClass || categoryAttr === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                    }
+                });
             });
         });
-    });
+    }
 
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
-
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
 
     // Smooth Scroll
@@ -275,7 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -285,41 +336,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
-// Testimonial Tabs
-window.showTestimonialTab = function (tabName) {
-    // Hide all contents
-    document.querySelectorAll('.testimonial-content').forEach(content => {
-        content.classList.remove('active');
-    });
-
-    // Deactivate all buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // Show selected content
-    if (tabName === 'video') {
-        document.getElementById('video-testimonials').classList.add('active');
-        document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
-    } else {
-        document.getElementById('client-testimonials').classList.add('active');
-        document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
+    // Testimonial Tabs
+    window.showTestimonialTab = function (tabName) {
+        document.querySelectorAll('.testimonial-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        if (tabName === 'video') {
+            const vTest = document.getElementById('video-testimonials');
+            if (vTest) vTest.classList.add('active');
+            const btn1 = document.querySelector('.tab-btn:nth-child(1)');
+            if (btn1) btn1.classList.add('active');
+        } else {
+            const cTest = document.getElementById('client-testimonials');
+            if (cTest) cTest.classList.add('active');
+            const btn2 = document.querySelector('.tab-btn:nth-child(2)');
+            if (btn2) btn2.classList.add('active');
+        }
     }
-}
 
+    /* ===========================
+       Achievements Section Counters 
+       (Separate from Impact Dashboard)
+       =========================== */
+    const achievementCounters = document.querySelectorAll('.counter');
+    let achievementStarted = false; // Flag for this section
 
-// Counter Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // The lower the slower
+    const animateAchievementCounters = () => {
+        if (achievementStarted) return;
+        achievementStarted = true;
 
-    const animateCounters = () => {
-        counters.forEach(counter => {
+        achievementCounters.forEach(counter => {
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
+                const speed = 200;
                 const inc = target / speed;
 
                 if (count < target) {
@@ -329,27 +383,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     counter.innerText = target;
                 }
             };
-            // Reset to 0 before starting animation
             counter.innerText = '0';
             updateCount();
         });
     };
 
-    // Trigger animation when section is in view
     let counterSection = document.querySelector('.achievements-section');
     if (counterSection) {
-        let options = {
-            rootMargin: '0px',
-            threshold: 0.3
-        }
-        let observer = new IntersectionObserver((entries, observer) => {
+        let obs = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounters();
+                    animateAchievementCounters();
                     observer.unobserve(entry.target);
                 }
             });
-        }, options);
-        observer.observe(counterSection);
+        }, { threshold: 0.3 });
+        obs.observe(counterSection);
     }
 });
