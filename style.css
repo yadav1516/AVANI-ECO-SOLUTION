@@ -1457,9 +1457,8 @@ input[type=range]::-webkit-slider-thumb:hover {
     max-height: 80%;
     object-fit: contain;
     transition: all 0.3s ease;
-    filter: grayscale(100%);
-    /* Start grayscale */
-    opacity: 0.7;
+    filter: none;
+    opacity: 1;
 }
 
 .client-logo:hover {
@@ -1643,7 +1642,12 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .footer-col ul li {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #999;
+    line-height: applied;
 }
 
 .footer-col ul li a {
@@ -1653,13 +1657,15 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 .footer-col ul li a:hover {
     color: var(--primary-green);
-    padding-left: 5px;
+    padding-left: 0;
 }
 
 .footer-col ul li i {
-    margin-right: 10px;
     color: var(--primary-green);
     width: 20px;
+    margin-top: 5px;
+    /* Align icon with first line of text */
+    flex-shrink: 0;
 }
 
 .footer-bottom {
