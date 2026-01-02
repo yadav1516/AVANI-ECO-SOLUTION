@@ -1,0 +1,128 @@
+
+
+/* =========================================
+   Responsive Design (Added by Agent)
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Header & Navigation */
+    .mobile-toggle {
+        display: flex;
+        z-index: 1002;
+    }
+
+    .navbar {
+        display: none; /* Hide desktop nav */
+    }
+
+    .header-right .btn {
+        display: none; /* Hide header buttons on tablet/mobile to save space */
+    }
+    
+    .header-right {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /* Layouts */
+    .split-section, 
+    .about-grid, 
+    .contact-split-wrapper,
+    .full-split-section {
+        flex-direction: column;
+    }
+
+    .split-image-side, 
+    .split-content-side,
+    .about-image-col,
+    .about-content-col,
+    .contact-map-side,
+    .contact-form-side {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-image-col {
+        margin-bottom: 30px;
+    }
+
+    /* Grid Systems */
+    .projects-grid, 
+    .systems-grid, 
+    .achievements-grid,
+    .values-grid,
+    .testimonials-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .projects-grid, 
+    .systems-grid, 
+    .achievements-grid,
+    .values-grid,
+    .testimonials-grid,
+    .process-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-links-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .header-container {
+        padding: 0 10px;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+}
