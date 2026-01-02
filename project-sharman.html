@@ -1,0 +1,248 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharman Ji - Pareesan Services</title>
+    <link rel="icon" href="images/logo_transparent.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <style>
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            height: 250px;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .page-header {
+            background: linear-gradient(rgba(1, 87, 155, 0.85), rgba(1, 87, 155, 0.75)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo_nav.png" alt="Pareesan Services" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <div class="dropdown-menu">
+                            <a href="about.html" class="dropdown-item">Who We Are</a>
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="clients.html" class="dropdown-item">Our Clients</a>
+                            <a href="reviews.html" class="dropdown-item">Testimonials</a>
+                            <a href="careers.html" class="dropdown-item">Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="solutions.html" class="nav-link">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
+                            <a href="rooftop-solar.html" class="dropdown-item">Rooftop Solar</a>
+                            <a href="ground-mount.html" class="dropdown-item">Ground Mount</a>
+                            <a href="om-services.html" class="dropdown-item">O&M Services</a>
+                            <a href="solar-in-delhi.html" class="dropdown-item">Solar in Delhi</a>
+                            <a href="pv-modules.html" class="dropdown-item">PV Modules</a>
+                            <a href="inverters.html" class="dropdown-item">Inverters</a>
+                        </div>
+                    </li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="calc.html" class="nav-link">Calculators</a>
+                        <div class="dropdown-menu">
+                            <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
+                            <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn btn-outline-dark header-btn">Contact Us</a>
+                <a href="javascript:void(0)" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
+                <button class="mobile-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="images/logo_transparent.png" alt="Pareesan" class="mobile-logo">
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    
+    <div class="page-header">
+        <div class="container">
+            <a href="projects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1 data-aos="fade-up">Sharman Ji</h1>
+            <p data-aos="fade-up" data-aos-delay="100"><i class="fas fa-map-marker-alt"></i> Ludhiana, Punjab | <i class="fas fa-bolt"></i> Commercial</p>
+        </div>
+    </div>
+    
+    <section class="section-padding">
+        <div class="container">
+            <div class="project-gallery">
+                
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image1-3.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image2-3.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image4-3.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image5-3.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image6-3.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="project/sharman%20ji%20ludhiyana%20rt/image7-2.jpeg" alt="Sharman Ji Image">
+        </div>
+        
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/logo_transparent.png" alt="Pareesan" class="footer-logo">
+                    <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
+                        sustainability.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61563198731468" aria-label="Facebook"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#safety">Safety</a></li>
+                            <li><a href="index.html#csr">CSR</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="solar-epc.html">Solar EPC</a></li>
+                            <li><a href="rooftop-solar.html">Rooftop Solar</a></li>
+                            <li><a href="om-services.html">O&M Services</a></li>
+                            <li><a href="calc.html">Solar Calculator</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Unit no 401 4th floor, Erose garden, Suraj Kund
+                                Rd, Charmwood Village, Faridabad, Haryana 121009</li>
+                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9873886002</li>
+                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> info@pareesan.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">PrivacyPolicy</a> | <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="projects.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
+
+    

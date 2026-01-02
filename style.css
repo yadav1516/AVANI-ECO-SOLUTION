@@ -101,11 +101,14 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-blue);
+    color: var(--primary-green);
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link::after {
-    background: var(--primary-blue);
+    display: none;
 }
 
 .hero-badge {
@@ -531,7 +534,7 @@ img {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     /* Reduced space between links */
 }
 
@@ -543,7 +546,9 @@ img {
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 5px 0;
+    padding: 8px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .nav-link::after {
@@ -553,8 +558,8 @@ img {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-blue);
-    /* Blue underline */
+    background: var(--primary-green);
+    /* Green underline */
     transition: var(--transition);
 }
 
@@ -565,7 +570,10 @@ img {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-blue);
+    color: var(--primary-green);
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header Right Icons */
