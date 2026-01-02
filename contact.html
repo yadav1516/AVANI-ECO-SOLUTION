@@ -32,8 +32,7 @@
     <header class="header header-internal">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Pareesan Home">
-                <img src="images/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+                <img src="images/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -89,8 +88,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="images/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
+            <img src="images/logo_transparent.png" alt="Pareesan" class="mobile-logo">
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
@@ -137,7 +135,8 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <h3 class="h5 mb-3">Contact Details</h3>
-                        <p class="mb-2"><a href="tel:+919873886002" style="color: var(--text-dark);"><strong>Phone:</strong> +91 9873886002</a>
+                        <p class="mb-2"><a href="tel:+919873886002"
+                                style="color: var(--text-dark);"><strong>Phone:</strong> +91 9873886002</a>
                         </p>
                         <p class="mb-0"><a href="mailto:<strong>Email:</strong> info@pareesan.com"
                                 style="color: var(--primary-blue);"><strong>Email:</strong> info@pareesan.com</a></p>
@@ -179,18 +178,26 @@
                     <div class="form-wrapper">
                         <span class="section-tag mb-3">Write to Us</span>
                         <h2>Send us a Message</h2>
-                        <form class="lead-form">
+                        <form class="lead-form" id="contactForm">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
-                                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="Your Email" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone" class="sr-only">Phone</label>
-                                <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+                                <input type="tel" id="phone" name="phone" class="form-control"
+                                    placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="sr-only">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control"
+                                    placeholder="Subject" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="sr-only">Message</label>
@@ -211,8 +218,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="images/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="images/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">

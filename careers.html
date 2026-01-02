@@ -240,9 +240,9 @@
                             <span><i class="fas fa-clock"></i> 2+ Years Exp</span>
                         </div>
                     </div>
-                    <a href="mailto:priya@pareesan.com" class="btn btn-outline-dark">
+                    <button class="btn btn-outline-dark" onclick="openApplyForm('Project Manager')">
                         Apply Now
-                    </a>
+                    </button>
 
                 </div>
 
@@ -256,7 +256,7 @@
                             <span><i class="fas fa-clock"></i> 2+ Years Exp</span>
                         </div>
                     </div>
-                    <a href="mailto:priya@pareesan.com" class="btn btn-outline-dark">Apply Now</a>
+                    <button class="btn btn-outline-dark" onclick="openApplyForm('Project Engineer')">Apply Now</button>
                 </div>
 
                 <!-- Job 3 -->
@@ -269,7 +269,7 @@
                             <span><i class="fas fa-clock"></i> 2+ Years Exp</span>
                         </div>
                     </div>
-                    <a href="mailto:priya@pareesan.com" class="btn btn-outline-dark">Apply Now</a>
+                    <button class="btn btn-outline-dark" onclick="openApplyForm('Site Engineer')">Apply Now</button>
                 </div>
 
                 <!-- Job 4 -->
@@ -282,7 +282,7 @@
                             <span><i class="fas fa-clock"></i> 2+ Years Exp</span>
                         </div>
                     </div>
-                    <a href="mailto:priya@pareesan.com" class="btn btn-outline-dark">Apply Now</a>
+                    <button class="btn btn-outline-dark" onclick="openApplyForm('Site Supervisor')">Apply Now</button>
                 </div>
 
                 <!-- Job 5 -->
@@ -295,15 +295,61 @@
                             <span><i class="fas fa-clock"></i> 2+ Years Exp</span>
                         </div>
                     </div>
-                    <a href="mailto:priya@pareesan.com" class="btn btn-outline-dark">Apply Now</a>
+                    <button class="btn btn-outline-dark" onclick="openApplyForm('Accountant (Main)')">Apply Now</button>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center mt-5">
-                <p>Don't see a role that fits? Send your resume to <a href="mailto:priya@pareesan.com"
-                        style="color: var(--primary-blue); font-weight: 600;">priya@pareesan.com</a></p>
+    <!-- Apply Modal -->
+    <div id="applyModal" class="lead-modal">
+        <div class="lead-modal-content">
+            <div class="lead-modal-header">
+                <h3>Apply for <span id="jobTitleSpan" class="highlight-text">Role</span></h3>
+                <span class="close-modal" onclick="closeApplyForm()">&times;</span>
+            </div>
+            <div class="lead-modal-body">
+                <form id="applyForm">
+                    <input type="hidden" id="jobRole" name="job_role">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="user_name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Email</label>
+                            <input type="email" name="user_email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group half">
+                            <label>Phone</label>
+                            <input type="tel" name="user_phone" placeholder="+91 9876543210" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Resume / CV (PDF, Docx)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx" required>
+                            <div class="file-upload-box">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span id="fileName">Click to Upload Resume</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="3" placeholder="Why are you a good fit? (Optional)"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-lead">Submit Application</button>
+                    <p class="form-note">Your application will be sent to hr@pareesan.com</p>
+                </form>
             </div>
         </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p>Don't see a role that fits? Send your resume to <a href="mailto:priya@pareesan.com"
+                style="color: var(--primary-blue); font-weight: 600;">priya@pareesan.com</a></p>
+    </div>
+    </div>
     </section>
 
     <!-- Footer -->

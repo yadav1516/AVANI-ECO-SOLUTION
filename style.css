@@ -2596,6 +2596,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 .lead-modal.show {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .lead-modal-content {

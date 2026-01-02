@@ -395,4 +395,222 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.3 });
         obs.observe(counterSection);
     }
+
+    /* ===========================
+       Apply Modal Logic (Careers)
+       =========================== */
+    window.openApplyForm = function (role) {
+        const modal = document.getElementById('applyModal');
+        const roleInput = document.getElementById('jobRole');
+        const titleSpan = document.getElementById('jobTitleSpan');
+
+        if (modal) {
+            if (roleInput) roleInput.value = role;
+            if (titleSpan) titleSpan.innerText = role;
+            modal.classList.add('show');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeApplyForm = function () {
+        const modal = document.getElementById('applyModal');
+        if (modal) {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+            document.body.style.overflow = '';
+        }
+    };
+
+    // File Input Name Update
+    const fileInput = document.getElementById('resumeFile');
+    const fileNameDisplay = document.getElementById('fileName');
+    if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                fileNameDisplay.innerText = this.files[0].name;
+                fileNameDisplay.style.color = 'var(--primary-dark)';
+            } else {
+                fileNameDisplay.innerText = 'Click to Upload Resume';
+            }
+        });
+    }
+
+    // Apps Script WEb App URL
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1yiHO2DVO5zNnTbJFxRVPiyp61W7QBuKHNNnYEg6iZgg-tfiq7HNf5PcyUElN8gcE/exec";
+
+    // Submssion Logic
+    const applyForm = document.getElementById('applyForm');
+    if (applyForm) {
+        applyForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.btn-submit-lead');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Uploading...';
+            submitBtn.disabled = true;
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const base64Data = e.target.result.split(',')[1]; // Remove header "data:application/pdf;base64,"
+
+                const payload = {
+                    user_info: {
+                        role: document.getElementById('jobRole').value,
+                        name: applyForm.querySelector('[name="user_name"]').value,
+                        email: applyForm.querySelector('[name="user_email"]').value,
+                        phone: applyForm.querySelector('[name="user_phone"]').value,
+                        message: applyForm.querySelector('[name="message"]').value
+                    },
+                    file_data: {
+                        name: file.name,
+                        type: file.type,
+                        base64: base64Data
+                    }
+                };
+
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for Google Apps Script
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                    .then(response => {
+                        // With no-cors, we get an opaque response, so we assume success if no error thrown
+                        alert('Application Sent Successfully!');
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                        closeApplyForm();
+                        applyForm.reset();
+                        fileNameDisplay.innerText = 'Click to Upload Resume';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Something went wrong. Please try again.');
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                    });
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please select a file!");
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+
+    /* ===========================
+       Contact Form Logic (Contact Us Page)
+       =========================== */
+    const contactForm = document.getElementById('contactForm');
+    const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOG89Ag2dcwIbY66VRWVT9OF4hB8CLQEm1mnJKdbBvHByztLHkOx6jdV_NR1KcuC30vg/exec";
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            const payload = {
+                user_info: {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                }
+            };
+
+            fetch(CONTACT_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => {
+                    alert('Message Sent Successfully! We will contact you soon.');
+                    contactForm.reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Something went wrong. Please try again.');
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+
+
+    /* ===========================
+       Consultation Form Logic (Consultation Page)
+       =========================== */
+    const consultForm = document.getElementById('consultForm');
+    const CONSULT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcfro31APArChvMZQKKHvjNwdUJmPfjDhULn_VxOCNcWRM0wTTqu05zDX-CAUkwj2BEQ/exec";
+
+    if (consultForm) {
+        consultForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Requesting...';
+            submitBtn.disabled = true;
+
+            // Combine inputs
+            const fullName = (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim();
+            const propType = document.getElementById('propertyType').value;
+            // As backend expects 'message', we'll pass PropertyType there
+
+            const payload = {
+                user_info: {
+                    name: fullName,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    city: document.getElementById('city').value,
+                    load: document.getElementById('billAmount').value,
+                    message: "Property Type: " + propType // Mapping property type to message
+                }
+            };
+
+            fetch(CONSULT_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => {
+                    alert('Quote Request Sent! We will get back to you with a solar plan.');
+                    consultForm.reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Something went wrong. Please try again.');
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
 });
