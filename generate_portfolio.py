@@ -71,6 +71,78 @@ PROJECTS = [
         "folder": "Dongkwang , maharastra , rt, 785kw",
         "category": "Rooftop",
         "zone": "west"
+    },
+    {
+        "id": "asahi",
+        "title": "ASAHI India Glass",
+        "location": "Roorkee, Uttarakhand",
+        "capacity": "1.3 MW",
+        "folder": "new/ASAHI roorkee 1.3mw gm",
+        "category": "Ground Mount",
+        "zone": "north"
+    },
+    {
+        "id": "st_export",
+        "title": "ST Export",
+        "location": "Ludhiana, Punjab",
+        "capacity": "18 MW",
+        "folder": "new/ST export pvt ltd ludhiana punjab 18 mw rt",
+        "category": "Rooftop",
+        "zone": "north"
+    },
+    {
+        "id": "euro_safety",
+        "title": "Euro Safety",
+        "location": "Mathura, Uttar Pradesh",
+        "capacity": "651 kW",
+        "folder": "new/euro safety mathura 651 kw rt",
+        "category": "Rooftop",
+        "zone": "north"
+    },
+    {
+        "id": "lalru",
+        "title": "Lalru Project",
+        "location": "Lalru, Punjab",
+        "capacity": "2.5 MW",
+        "folder": "new/lalru 2.5 mw rt",
+        "category": "Rooftop",
+        "zone": "north"
+    },
+    {
+        "id": "lodha",
+        "title": "Lodha Group",
+        "location": "Mumbai, Maharashtra",
+        "capacity": "Commercial",
+        "folder": "new/lodha mumbai",
+        "category": "Rooftop",
+        "zone": "west"
+    },
+    {
+        "id": "smi",
+        "title": "SMI Coated Products",
+        "location": "Mumbai, Maharashtra",
+        "capacity": "Commercial",
+        "folder": "new/smi mumbai rt",
+        "category": "Rooftop",
+        "zone": "west"
+    },
+    {
+        "id": "sportking_bhatinda_exp",
+        "title": "Sportking (Expansion)",
+        "location": "Bhatinda, Punjab",
+        "capacity": "21.5 MW",
+        "folder": "new/sportking bhatinda 21.5 mw rt",
+        "category": "Rooftop",
+        "zone": "north"
+    },
+    {
+        "id": "sportking_ludhiana",
+        "title": "Sportking Ludhiana",
+        "location": "Ludhiana, Punjab",
+        "capacity": "5 MW",
+        "folder": "new/sportking ludhiana 5 mw rt",
+        "category": "Rooftop",
+        "zone": "north"
     }
 ]
 
@@ -270,7 +342,7 @@ FOOTER = """
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. | <a href="privacy.html">PrivacyPolicy</a> | <a href="terms.html">Terms of Use</a></p>
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. <!-- | <a href="privacy.html">PrivacyPolicy</a> | <a href="terms.html">Terms of Use</a> --></p>
             </div>
         </div>
     </footer>
