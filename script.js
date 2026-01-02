@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Testimonial Tabs
+    // Testimonial Tabs Logic (Modified to only show client testimonials)
     window.showTestimonialTab = function (tabName) {
         document.querySelectorAll('.testimonial-content').forEach(content => {
             content.classList.remove('active');
@@ -345,17 +345,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.classList.remove('active');
         });
-        if (tabName === 'video') {
-            const vTest = document.getElementById('video-testimonials');
-            if (vTest) vTest.classList.add('active');
-            const btn1 = document.querySelector('.tab-btn:nth-child(1)');
-            if (btn1) btn1.classList.add('active');
-        } else {
-            const cTest = document.getElementById('client-testimonials');
-            if (cTest) cTest.classList.add('active');
-            const btn2 = document.querySelector('.tab-btn:nth-child(2)');
-            if (btn2) btn2.classList.add('active');
-        }
+
+        // Always show client testimonials regardless of input, as video tab is removed
+        const cTest = document.getElementById('client-testimonials');
+        if (cTest) cTest.classList.add('active');
+        const btn2 = document.querySelector('.tab-btn:nth-child(2)');
+        if (btn2) btn2.classList.add('active');
     }
 
     /* ===========================
