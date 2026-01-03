@@ -5,233 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webinars - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Learn more about Webinars at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <meta name="keywords" content="solar, epc, pareesan">
     <link rel="icon" href="assets/img/general/logo_transparent.png" type="image/png">
-    <meta name="description" content="Learn more about Webinars at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
+    <!-- CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Premium Webinar Styles */
-        :root {
-            --card-radius: 16px;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --card-hover-shadow: 0 20px 40px rgba(2, 119, 189, 0.15);
-        }
-
-        .webinar-hero {
-            background: linear-gradient(135deg, rgba(1, 87, 155, 0.9), rgba(0, 47, 75, 0.8)), url('https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-        }
-
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            color: var(--white);
-        }
-
-        .webinar-card-lg {
-            background: var(--white);
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 50px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-        }
-
-        .webinar-card-lg:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-hover-shadow);
-        }
-
-        @media (min-width: 992px) {
-            .webinar-card-lg {
-                flex-direction: row;
-                align-items: stretch;
-            }
-        }
-
-        .webinar-thumb {
-            flex: 1.1;
-            position: relative;
-            min-height: 350px;
-        }
-
-        .webinar-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-        }
-
-        .webinar-details {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .webinar-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 20px;
-            color: var(--text-light);
-            /* Neutral color instead of green */
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .webinar-meta span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #f8f9fa;
-            padding: 5px 12px;
-            border-radius: 6px;
-        }
-
-        .webinar-meta i {
-            color: var(--primary-blue);
-            /* Blue accent */
-        }
-
-        .speaker-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .speaker-img {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .past-webinars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .past-webinar-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid #eee;
-        }
-
-        .past-webinar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .past-thumb {
-            height: 200px;
-            position: relative;
-        }
-
-        .past-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-            backdrop-filter: blur(2px);
-        }
-
-        .past-webinar-card:hover .play-overlay {
-            opacity: 1;
-        }
-
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transform: scale(0.8);
-            transition: var(--transition);
-        }
-
-        .past-webinar-card:hover .play-btn {
-            transform: scale(1);
-        }
-
-        .past-content {
-            padding: 25px;
-        }
-
-        .past-content h4 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-    </style>
 </head>
 
-<body>
+<body class="projects-page">
 
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Pareesan Home">
                 <img src="assets/img/general/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
@@ -243,17 +33,17 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
                     <li class="nav-item has-dropdown">
                         <a href="solutions.html" class="nav-link">Services</a>
                         <div class="dropdown-menu">
+                            <a href="solutions.html" class="dropdown-item">Our Solutions</a>
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
@@ -264,14 +54,13 @@
                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
                 <a href="contact.html" class="btn btn-outline-dark header-btn">Contact Us</a>
-                <a href="javascript:void(0)" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
-                <button class="mobile-toggle" aria-label="Menu">
+                <a href="consultation.html" class="btn btn-primary header-btn pulse-btn">Get Free Consultation</a>
+                <button class="mobile-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -284,19 +73,45 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="assets/img/general/logo_transparent.png" alt="Pareesan" class="mobile-logo">
-            <button class="close-menu"><i class="fas fa-times"></i></button>
+            <!-- Logo Removed as per user request -->
+            <button class="close-menu" aria-label="Close Menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="webinars.html">Webinars</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#services">Solutions</a></li>
-            <li><a href="index.html#technology">Technology</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">About Us <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="about.html">Who We Are</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="clients.html">Our Clients</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="solutions.html">Our Solutions</a></li>
+                    <li><a href="solar-epc.html">Solar EPC</a></li>
+                    <li><a href="installation.html">Installation</a></li>
+                    <li><a href="om-services.html">O&M Services</a></li>
+                </ul>
+            </li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="calc.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Calculators <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="calc.html">Solar ROI Calculator</a></li>
+                    <li><a href="load-calculator.html">Load Calculator</a></li>
+                </ul>
+            </li>
         </ul>
+        <div class="mobile-menu-actions">
+            <a href="contact.html" class="btn btn-outline-dark btn-block mb-3"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block; margin-bottom: 15px;">Contact
+                Us</a>
+            <a href="consultation.html" class="btn btn-primary btn-block"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block;">Get Free Consultation</a>
+        </div>
     </div>
 
     <!-- Hero Section -->
@@ -483,7 +298,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -518,4 +333,3 @@
 </body>
 
 </html>
-

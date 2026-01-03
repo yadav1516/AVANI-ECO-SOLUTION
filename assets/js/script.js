@@ -44,8 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeMenu) closeMenu.addEventListener('click', closeMenuFunc);
     if (overlay) overlay.addEventListener('click', closeMenuFunc);
 
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a:not([href="javascript:void(0)"])');
     mobileLinks.forEach(link => link.addEventListener('click', closeMenuFunc));
+
+    // Mobile Dropdown Logic
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown > a');
+    mobileDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parent = dropdown.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
 
 
     /* ===========================

@@ -5,106 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Learn more about Catalogue at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <meta name="keywords" content="solar, epc, pareesan">
     <link rel="icon" href="assets/img/general/logo_transparent.png" type="image/png">
-    <meta name="description" content="Learn more about Catalogue at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
-    <meta name="keywords"  content="pareesan catalogue , pareesan price , solar services, "
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
 
-    <!-- Icons -->
+    <!-- CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .catalogue-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1592833159057-65a269755561?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .catalogue-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid #eee;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .product-img {
-            height: 250px;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-img img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        .product-details {
-            padding: 20px;
-        }
-
-        .product-category {
-            font-size: 0.85rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 10px 0;
-            color: var(--text-dark);
-        }
-
-        .product-desc {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 
-<body>
+<body class="projects-page">
 
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/general/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+            <a href="index.html" class="logo" aria-label="Pareesan Home">
+                <img src="assets/img/general/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -115,17 +33,17 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
                     <li class="nav-item has-dropdown">
                         <a href="solutions.html" class="nav-link">Services</a>
                         <div class="dropdown-menu">
+                            <a href="solutions.html" class="dropdown-item">Our Solutions</a>
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
@@ -136,18 +54,17 @@
                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
                 <a href="contact.html" class="btn btn-outline-dark header-btn">Contact Us</a>
-                <a href="javascript:void(0)" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
-                    <button class="mobile-toggle" aria-label="Menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
+                <a href="consultation.html" class="btn btn-primary header-btn pulse-btn">Get Free Consultation</a>
+                <button class="mobile-toggle" aria-label="Open Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -156,17 +73,45 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="assets/img/general/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
-            <button class="close-menu"><i class="fas fa-times"></i></button>
+            <!-- Logo Removed as per user request -->
+            <button class="close-menu" aria-label="Close Menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="webinars.html">Webinars</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">About Us <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="about.html">Who We Are</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="clients.html">Our Clients</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="solutions.html">Our Solutions</a></li>
+                    <li><a href="solar-epc.html">Solar EPC</a></li>
+                    <li><a href="installation.html">Installation</a></li>
+                    <li><a href="om-services.html">O&M Services</a></li>
+                </ul>
+            </li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="calc.html">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Calculators <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="calc.html">Solar ROI Calculator</a></li>
+                    <li><a href="load-calculator.html">Load Calculator</a></li>
+                </ul>
+            </li>
         </ul>
+        <div class="mobile-menu-actions">
+            <a href="contact.html" class="btn btn-outline-dark btn-block mb-3"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block; margin-bottom: 15px;">Contact
+                Us</a>
+            <a href="consultation.html" class="btn btn-primary btn-block"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block;">Get Free Consultation</a>
+        </div>
     </div>
 
     <!-- Hero Section -->
@@ -180,43 +125,64 @@
     <!-- Catalogue Grid -->
     <section class="section-padding">
         <div class="container">
-            <div class="catalogue-grid">
+            <div class="catalogue-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <!-- Item 1 -->
-                <div class="product-card" data-aos="fade-up">
-                    <div class="product-img">
-                        <i class="fas fa-solar-panel fa-4x" style="color: #ccc;"></i>
+                <div class="product-card" data-aos="fade-up"
+                    style="background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="product-img" style="margin-bottom: 25px;">
+                        <i class="fas fa-solar-panel fa-4x"
+                            style="color: var(--primary-green); background: rgba(39, 174, 96, 0.1); padding: 20px; border-radius: 50%;"></i>
                     </div>
                     <div class="product-details">
-                        <div class="product-category">Solar Modules</div>
-                        <h3 class="product-title">550W Bifacial Module</h3>
-                        <p class="product-desc">High-efficiency mono-perc bifacial modules for maximum generation.</p>
-                        <a href="javascript:void(0)" class="btn btn-outline-dark btn-sm">Download Spec Sheet</a>
+                        <div class="product-category"
+                            style="color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                            Solar Modules</div>
+                        <h3 class="product-title" style="margin-bottom: 15px; font-size: 1.5rem;">550W Bifacial Module
+                        </h3>
+                        <p class="product-desc" style="color: #666; margin-bottom: 25px;">High-efficiency mono-perc
+                            bifacial modules for maximum generation.</p>
+                        <a href="spec-sheet.html" class="btn btn-outline-dark btn-sm"
+                            style="border-radius: 30px; padding: 10px 25px;">Download Spec Sheet</a>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-img">
-                        <i class="fas fa-server fa-4x" style="color: #ccc;"></i>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"
+                    style="background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="product-img" style="margin-bottom: 25px;">
+                        <i class="fas fa-bolt fa-4x"
+                            style="color: var(--primary-blue); background: rgba(0, 86, 179, 0.1); padding: 25px 32px; border-radius: 50%;"></i>
                     </div>
                     <div class="product-details">
-                        <div class="product-category">Inverters</div>
-                        <h3 class="product-title">100kW String Inverter</h3>
-                        <p class="product-desc">Smart string inverter with AI-powered arc fault protection.</p>
-                        <a href="javascript:void(0)" class="btn btn-outline-dark btn-sm">Download Spec Sheet</a>
+                        <div class="product-category"
+                            style="color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                            Inverters</div>
+                        <h3 class="product-title" style="margin-bottom: 15px; font-size: 1.5rem;">100kW String Inverter
+                        </h3>
+                        <p class="product-desc" style="color: #666; margin-bottom: 25px;">Smart string inverter with
+                            AI-powered arc fault protection.</p>
+                        <a href="spec-sheet.html" class="btn btn-outline-dark btn-sm"
+                            style="border-radius: 30px; padding: 10px 25px;">Download Spec Sheet</a>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-img">
-                        <i class="fas fa-layer-group fa-4x" style="color: #ccc;"></i>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"
+                    style="background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="product-img" style="margin-bottom: 25px;">
+                        <i class="fas fa-layer-group fa-4x"
+                            style="color: #f39c12; background: rgba(243, 156, 18, 0.1); padding: 20px; border-radius: 50%;"></i>
                     </div>
                     <div class="product-details">
-                        <div class="product-category">Mounting Structures</div>
-                        <h3 class="product-title">HDG Ground Mount</h3>
-                        <p class="product-desc">Hot-dipped galvanized structures for long-lasting durability.</p>
-                        <a href="javascript:void(0)" class="btn btn-outline-dark btn-sm">Download Spec Sheet</a>
+                        <div class="product-category"
+                            style="color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                            Mounting Structures</div>
+                        <h3 class="product-title" style="margin-bottom: 15px; font-size: 1.5rem;">HDG Ground Mount</h3>
+                        <p class="product-desc" style="color: #666; margin-bottom: 25px;">Hot-dipped galvanized
+                            structures for long-lasting durability.</p>
+                        <a href="spec-sheet.html" class="btn btn-outline-dark btn-sm"
+                            style="border-radius: 30px; padding: 10px 25px;">Download Spec Sheet</a>
                     </div>
                 </div>
             </div>
@@ -228,8 +194,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -259,7 +224,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -291,4 +256,3 @@
 </body>
 
 </html>
-

@@ -5,35 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Learn more about solar Calculator at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <meta name="keywords" content="solar, epc, pareesan">
     <link rel="icon" href="assets/img/general/logo_transparent.png" type="image/png">
-    <meta name="description" content="Learn more about solar Calculator at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
+    <!-- CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/calc.css">
 </head>
 
-<body>
+<body class="projects-page">
 
     <!-- Header -->
-    <header class="header header-internal">
+    <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/general/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+            <a href="index.html" class="logo" aria-label="Pareesan Home">
+                <img src="assets/img/general/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -44,35 +33,34 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
                     <li class="nav-item has-dropdown">
                         <a href="solutions.html" class="nav-link">Services</a>
                         <div class="dropdown-menu">
+                            <a href="solutions.html" class="dropdown-item">Our Solutions</a>
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
                     <li class="nav-item has-dropdown">
                         <a href="calc.html" class="nav-link">Calculators</a>
                         <div class="dropdown-menu">
-                             <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
-                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
+                            <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
+                            <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
                 </ul>
             </nav>
 
             <div class="header-right">
                 <a href="contact.html" class="btn btn-outline-dark header-btn">Contact Us</a>
-                <a href="javascript:void(0)" onclick="openLeadForm()" class="btn btn-primary header-btn">Get Quote</a>
-                <button class="mobile-toggle" aria-label="Menu">
+                <a href="consultation.html" class="btn btn-primary header-btn pulse-btn">Get Free Consultation</a>
+                <button class="mobile-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -85,28 +73,47 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="assets/img/general/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
-            <button class="close-menu"><i class="fas fa-times"></i></button>
+            <!-- Logo Removed as per user request -->
+            <button class="close-menu" aria-label="Close Menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="webinars.html">Webinars</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#services">Solutions</a></li>
-            <li><a href="index.html#technology">Technology</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">About Us <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="about.html">Who We Are</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="clients.html">Our Clients</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="solutions.html">Our Solutions</a></li>
+                    <li><a href="solar-epc.html">Solar EPC</a></li>
+                    <li><a href="installation.html">Installation</a></li>
+                    <li><a href="om-services.html">O&M Services</a></li>
+                </ul>
+            </li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="calc.html" class="active">Calculator</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)">Calculators <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="calc.html">Solar ROI Calculator</a></li>
+                    <li><a href="load-calculator.html">Load Calculator</a></li>
+                </ul>
+            </li>
         </ul>
+        <div class="mobile-menu-actions">
+            <a href="contact.html" class="btn btn-outline-dark btn-block mb-3"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block; margin-bottom: 15px;">Contact
+                Us</a>
+            <a href="consultation.html" class="btn btn-primary btn-block"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block;">Get Free Consultation</a>
+        </div>
     </div>
 
-    <!-- Calculator Hero -->
-    <!-- Hero Section (Video Background) -->
-    <!-- Calculator Hero Removed as per request -->
-    <div style="margin-top: 100px;"></div>
-
-    <!-- Main Calculator Section -->
     <section class="advanced-calculator section-padding">
         <div class="container">
             <div class="row">
@@ -179,7 +186,8 @@
                         </div>
 
                         <div class="calc-note-warning">
-                            <p>Do not have required roof area? <a href="javascript:void(0)" onclick="openLeadForm()">Our consultants will
+                            <p>Do not have required roof area? <a href="javascript:void(0)" onclick="openLeadForm()">Our
+                                    consultants will
                                     guide you, Get in touch</a></p>
                         </div>
 
@@ -314,8 +322,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -346,7 +353,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -362,7 +369,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. <!-- | <a href="privacy.html">Privacy
                         Policy</a> | <a href="terms.html">Terms of Use</a> --></p>
-                
+
             </div>
         </div>
     </footer>
@@ -392,7 +399,7 @@
         if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
         if (overlay) overlay.addEventListener('click', toggleMenu);
     </script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
-

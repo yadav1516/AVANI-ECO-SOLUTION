@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ground Mount - Pareesan Services Pvt Ltd</title>
-    <meta name="description" content="Learn more about Ground Mount at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
-    <meta name="keywords" content="solar, epc, pareesan">
-    <link rel="icon" href="assets/img/general/logo_transparent.png" type="image/png">
-    
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+import os
+import re
 
-<body class="projects-page">
+# The files to process
+PROJECT_FILES = [
+    'project-asahi.html',
+    'project-dongkwang.html',
+    'project-euro_safety.html',
+    'project-lalru.html',
+    'project-lodha.html',
+    'project-nssi.html',
+    'project-sharman.html',
+    'project-smi.html',
+    'project-sportking.html',
+    'project-sportking_bhatinda_exp.html',
+    'project-sportking_ludhiana.html',
+    'project-st_export.html',
+    'project-tkm.html',
+    'project-waree.html',
+    'project-welspun.html'
+]
 
-    <!-- Header -->
+PROJECT_DIR = '/Users/avinash/Pareesan Services Pvt. Ltd./PAREESAN/'
+
+# The Gold Standard Header HTML (Taken from projects.html)
+HEADER_HTML = """    <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Pareesan Home">
@@ -52,6 +59,7 @@
                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
                 </ul>
             </nav>
 
@@ -102,59 +110,24 @@
                     <li><a href="load-calculator.html">Load Calculator</a></li>
                 </ul>
             </li>
+            <li><a href="blog.html">Blog</a></li>
         </ul>
         <div class="mobile-menu-actions">
-            <a href="contact.html" class="btn btn-outline-dark btn-block mb-3" style="width: 100%; border-radius: 50px; text-align: center; display: block; margin-bottom: 15px;">Contact Us</a>
-            <a href="consultation.html" class="btn btn-primary btn-block" style="width: 100%; border-radius: 50px; text-align: center; display: block;">Get Free Consultation</a>
+            <a href="contact.html" class="btn btn-outline-dark btn-block mb-3"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block; margin-bottom: 15px;">Contact
+                Us</a>
+            <a href="consultation.html" class="btn btn-primary btn-block"
+                style="width: 100%; border-radius: 50px; text-align: center; display: block;">Get Free Consultation</a>
         </div>
-    </div>
+    </div>"""
 
-<!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Ground <span class="highlight-text">Mount</span></h1>
-            <p class="hero-desc">Utility-scale solar power for maximum generation.</p>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <section class="section-padding">
-        <div class="container text-center">
-            <div class="section-header mb-5" data-aos="fade-up">
-                <div class="section-tag">Large Scale</div>
-                <h2 class="section-title">Utility & <span class="highlight">Captive</span></h2>
-            </div>
-            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
-                We specialize in large-scale ground-mounted solar projects. Our expertise covers land acquisition
-                support, grid connectivity, and high-efficiency plant design for maximum ROI.
-            </p>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-network-wired fa-3x text-success mb-3"></i>
-                        <h4>Grid Connected</h4>
-                        <p>Large solar farms feeding power directly to the grid under PPA or Open Access.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-industry fa-3x text-success mb-3"></i>
-                        <h4>Captive Power</h4>
-                        <p>Dedicated solar plants for industries to meet their entire energy demand.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="consultation.html" class="btn btn-primary mt-5">Discuss Your Project</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
+# Footer Standard (Optional, but good for consistency)
+FOOTER_HTML = """    <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="assets/img/general/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -162,7 +135,7 @@
                             target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.linkedin.com/company/pareesan-service-pvt-ltd/" aria-label="LinkedIn"
                             target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.youtube.com/@PareesanServices" aria-label="YouTube" target="_blank"><i
                                 class="fab fa-youtube"></i></a>
                         <a href="https://www.instagram.com/pareesan_services/" aria-label="Instagram" target="_blank"><i
@@ -174,9 +147,10 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="team.html">Our Team</a></li>
                             <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
                             <li><a href="partners.html">Partner With Us</a></li>
+                            <li><a href="reviews.html">Reviews</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -185,7 +159,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -199,22 +173,72 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. <!-- | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> --></p>
-                
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
+    </footer>"""
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
-</body>
+def fix_file(filename):
+    file_path = os.path.join(PROJECT_DIR, filename)
+    if not os.path.exists(file_path):
+        print(f"File not found: {filename}")
+        return
 
-</html>
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
+    # 1. Fix Body Class
+    if 'class="projects-page"' not in content:
+        content = content.replace('<body>', '<body class="projects-page">')
+    
+    # 2. Replace Header and Mobile Menu
+    # Regex to find everything from <header> to end of mobile menu div
+    # This is tricky because mobile menu might be separate.
+    # Strategy: Replace <header.../header> with NEW_HEADER.
+    # Then remove old mobile-menu divs if they exist separately.
+    
+    # Simple Replace for Header
+    header_pattern = re.compile(r'<header.*?</header>', re.DOTALL)
+    content = header_pattern.sub(HEADER_HTML, content)
+
+    # Remove old navbar/mobile menu overlapping trash if it exists immediately after header
+    # We will just inject the header. The user's files have <div class="mobile-menu"> usually after header.
+    # Let's try to find and replace the standard block of header + mobile menu if possible.
+    # Given the variance, I'll rely on Replacing <header>... and then Cleaning up known mobile menu artifacts.
+    
+    mobile_menu_pattern = re.compile(r'<div class="mobile-menu-overlay">.*?<div class="mobile-menu">.*?</div>\s*</div>', re.DOTALL)
+    # The pattern in project-lalru.html is:
+    # <div class="mobile-menu-overlay"></div>
+    # <div class="mobile-menu">...</div>
+    
+    # Let's brutally remove old mobile menu fragments to avoid duplicates, as HEADER_HTML includes them.
+    content = re.sub(r'<div class="mobile-menu-overlay"></div>', '', content)
+    # Remove the mobile menu container
+    content = re.sub(r'<div class="mobile-menu">.*?</div>', '', content, flags=re.DOTALL)
+    
+    # Now, verify HEADER_HTML is intact. The regex replacement of header might have worked. 
+    # But wait, HEADER_HTML *includes* the mobile menu.
+    # So if I replaced <header> with HEADER_HTML, I have the menu.
+    # But I need to make sure I didn't leave a DOUBLE menu.
+    # Hence the removal steps above.
+
+    # 3. Replace Footer
+    footer_pattern = re.compile(r'<footer.*?</footer', re.DOTALL) # Match until closing tag start
+    # This is risky with regex. Let's start with Header fix which is the main visual bug.
+    
+    # 4. Inject Script at bottom
+    if '<script src="assets/js/script.js"></script>' not in content:
+        content = content.replace('</body>', '<script src="assets/js/script.js"></script>\n</body>')
+
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"Fixed: {filename}")
+
+def main():
+    print("Starting Project Page Fix...")
+    for file in PROJECT_FILES:
+        fix_file(file)
+    print("Done.")
+
+if __name__ == "__main__":
+    main()
