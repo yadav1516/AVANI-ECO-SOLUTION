@@ -3384,7 +3384,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 /* --- Internal Page Hero --- */
 .page-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=formathttps://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000fit=crophttps://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000q=80https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000w=1600');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1600');
     background-size: cover;
     background-position: center;
     height: 350px;
@@ -4107,7 +4107,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 /* --- Internal Page Hero --- */
 .page-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=formathttps://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000fit=crophttps://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000q=80https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1000w=1600');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1600');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -4446,157 +4446,133 @@ input[type=range]::-webkit-slider-thumb:hover {
     }
 }
 
-       / *   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =           R e s p o n s i v e   D e s i g n   ( A d d e d   b y   A g e n t )           = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =   * /         @ m e d i a   ( m a x - w i d t h :   1 2 0 0 p x )    {
-                 . c o n t a i n e r    {
-                             m a x - w i d t h :    9 6 0 p x ;
-                     
+/* ========================
+   Responsive Design
+   ======================== */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
     }
 
-                             . h e r o - t i t l e    {
-                             f o n t - s i z e :    3 . 5 r e m ;
-                     
+    .hero-title {
+        font-size: 3.5rem;
     }
-
-         
 }
 
-         @ m e d i a   ( m a x - w i d t h :   9 9 1 p x )    {
-                 . c o n t a i n e r    {
-                             m a x - w i d t h :    7 2 0 p x ;
-                     
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
     }
 
-                     / *   H e a d e r   &   N a v i g a t i o n   * /             . m o b i l e - t o g g l e    {
-                             d i s p l a y :    f l e x ;
-                             z - i n d e x :    1 0 0 2 ;
-                     
+    /* Header & Navigation */
+    .mobile-toggle {
+        display: flex;
+        z-index: 1002;
     }
 
-                     . n a v b a r    {
-                             d i s p l a y :    n o n e ;
-           / *   H i d e   d e s k t o p   n a v   * /             
+    .navbar {
+        display: none;
+        /* Hide desktop nav */
     }
 
-                     . h e a d e r - r i g h t   . b t n    {
-                             d i s p l a y :    n o n e ;
-           / *   H i d e   h e a d e r   b u t t o n s   o n   t a b l e t / m o b i l e   t o   s a v e   s p a c e   * /             
+    .header-right .btn {
+        display: none;
+        /* Hide header buttons on mobile */
     }
 
-                             . h e a d e r - r i g h t    {
-                             b o r d e r - l e f t :    n o n e ;
-                             p a d d i n g - l e f t :    0 ;
-                     
+    .header-right {
+        border-left: none;
+        padding-left: 0;
     }
 
-                     / *   L a y o u t s   * /             . s p l i t - s e c t i o n ,
-                   . a b o u t - g r i d ,
-                   . c o n t a c t - s p l i t - w r a p p e r ,
-                 . f u l l - s p l i t - s e c t i o n    {
-                             f l e x - d i r e c t i o n :    c o l u m n ;
-                     
+    /* Layouts */
+    .split-section,
+    .about-grid,
+    .contact-split-wrapper,
+    .full-split-section {
+        flex-direction: column;
     }
 
-                     . s p l i t - i m a g e - s i d e ,
-                   . s p l i t - c o n t e n t - s i d e ,
-                 . a b o u t - i m a g e - c o l ,
-                 . a b o u t - c o n t e n t - c o l ,
-                 . c o n t a c t - m a p - s i d e ,
-                 . c o n t a c t - f o r m - s i d e    {
-                             w i d t h :    1 0 0 % ;
-                             f l e x :    0   0   1 0 0 % ;
-                             m a x - w i d t h :    1 0 0 % ;
-                     
+    .split-image-side,
+    .split-content-side,
+    .about-image-col,
+    .about-content-col,
+    .contact-map-side,
+    .contact-form-side {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
-                     . a b o u t - i m a g e - c o l    {
-                             m a r g i n - b o t t o m :    3 0 p x ;
-                     
+    .about-image-col {
+        margin-bottom: 30px;
     }
 
-                     / *   G r i d   S y s t e m s   * /             . p r o j e c t s - g r i d ,
-                   . s y s t e m s - g r i d ,
-                   . a c h i e v e m e n t s - g r i d ,
-                 . v a l u e s - g r i d ,
-                 . t e s t i m o n i a l s - g r i d ,
-                 . p r o c e s s - g r i d    {
-                             g r i d - t e m p l a t e - c o l u m n s :    r e p e a t ( 2 ,    1 f r )    ! i m p o r t a n t ;
-                             g a p :    2 0 p x    ! i m p o r t a n t ;
-                     
+    /* Grid Systems */
+    .projects-grid,
+    .systems-grid,
+    .achievements-grid,
+    .values-grid,
+    .testimonials-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
     }
 
-                             . h e r o - t i t l e    {
-                             f o n t - s i z e :    3 r e m ;
-                     
+    .hero-title {
+        font-size: 3rem;
     }
-
-         
 }
 
-         @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )    {
-                 . c o n t a i n e r    {
-                             m a x - w i d t h :    5 4 0 p x ;
-                     
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
     }
 
-                     . p r o j e c t s - g r i d ,
-                   . s y s t e m s - g r i d ,
-                   . a c h i e v e m e n t s - g r i d ,
-                 . v a l u e s - g r i d ,
-                 . t e s t i m o n i a l s - g r i d ,
-                 . p r o c e s s - g r i d    {
-                             g r i d - t e m p l a t e - c o l u m n s :    1 f r    ! i m p o r t a n t ;
-                     
+    .projects-grid,
+    .systems-grid,
+    .achievements-grid,
+    .values-grid,
+    .testimonials-grid,
+    .process-grid {
+        grid-template-columns: 1fr !important;
     }
 
-                     . h e r o - t i t l e    {
-                             f o n t - s i z e :    2 . 2 r e m ;
-                     
+    .hero-title {
+        font-size: 2.2rem;
     }
 
-                             . s e c t i o n - t i t l e    {
-                             f o n t - s i z e :    2 r e m ;
-                     
+    .section-title {
+        font-size: 2rem;
     }
 
-                     . f o o t e r - l i n k s - g r o u p    {
-                             g r i d - t e m p l a t e - c o l u m n s :    1 f r ;
-                     
+    .footer-links-group {
+        grid-template-columns: 1fr;
     }
 
-                             . f o o t e r - t o p    {
-                             f l e x - d i r e c t i o n :    c o l u m n ;
-                             g a p :    3 0 p x ;
-                     
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
     }
-
-         
 }
 
-         @ m e d i a   ( m a x - w i d t h :   5 7 6 p x )    {
-                 . c o n t a i n e r    {
-                             p a d d i n g :    0   1 5 p x ;
-                     
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
     }
 
-                     . h e r o - t i t l e    {
-                             f o n t - s i z e :    1 . 8 r e m ;
-                     
+    .hero-title {
+        font-size: 1.8rem;
     }
 
-                             . h e a d e r - c o n t a i n e r    {
-                             p a d d i n g :    0   1 0 p x ;
-                     
+    .header-container {
+        padding: 0 10px;
     }
 
-                             . l o g o - i m g    {
-                             h e i g h t :    5 0 p x ;
-                     
+    .logo-img {
+        height: 50px;
     }
-
-         
 }
-
-     
 
 /* Solar EPC Page Sidebar Styles */
 .sidebar-widget {
@@ -4759,4 +4735,93 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 .email-popup button:hover {
     color: #ff4d4d;
+}
+
+/* Solutions Page Styles */
+.solution-block {
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.solution-block:last-child {
+    border-bottom: none;
+}
+
+.solution-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.solution-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.solution-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.solution-features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.solution-features li i {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+}
+
+.solution-img {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
+}
+
+.solution-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.solution-img:hover img {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.solution-img::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    bottom: -20px;
+    left: 20px;
+    border: 2px solid var(--primary-green);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+.solution-img:hover::before {
+    top: 10px;
+    right: -10px;
+    bottom: -10px;
+    left: 10px;
+    opacity: 0.6;
+}
+
+.bg-light-alt {
+    background-color: #f9fbfd;
 }
