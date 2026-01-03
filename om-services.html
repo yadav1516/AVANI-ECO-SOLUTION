@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om Services - Pareesan Services Pvt Ltd</title>
-    <meta name="description" content="Learn more about Om Services at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <title>O&M Services - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Expert Operations & Maintenance (O&M) services for solar tracking, cleaning, repairs, and warranty management.">
     <link rel="icon" href="images/logo_transparent.png" type="image/png">
 
     <!-- Fonts -->
@@ -36,6 +37,66 @@
             text-align: center;
             color: var(--white);
         }
+
+        .service-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 30px;
+        }
+
+        .service-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-img-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-text-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-section-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .service-section-img:hover {
+            transform: translateY(-5px);
+        }
+
+        .epc-subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .epc-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .service-row.reverse {
+                flex-direction: row;
+            }
+
+            .service-section-img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -45,8 +106,7 @@
     <header class="header header-internal">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Pareesan Home">
-                <img src="images/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+                <img src="images/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -57,7 +117,7 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <a href="reviews.html" class="dropdown-item">Testimonials</a>
+                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
@@ -67,15 +127,15 @@
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
                     <li class="nav-item has-dropdown">
                         <a href="calc.html" class="nav-link">Calculators</a>
                         <div class="dropdown-menu">
-                             <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
-                             <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
+                            <a href="calc.html" class="dropdown-item">Solar ROI Calculator</a>
+                            <a href="load-calculator.html" class="dropdown-item">Load Calculator</a>
                         </div>
                     </li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
@@ -98,8 +158,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="images/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
+            <img src="images/logo_transparent.png" alt="Pareesan" class="mobile-logo">
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
@@ -120,41 +179,124 @@
         </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- Structure Section -->
     <section class="section-padding">
-        <div class="container text-center">
-            <div class="section-header mb-5" data-aos="fade-up">
-                <div class="section-tag">Reliability</div>
-                <h2 class="section-title">Maximize Your <span class="highlight">Yield</span></h2>
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px;">
+
+                <!-- Main Content (Left Side) -->
+                <div class="col-lg-8" style="flex: 2; min-width: 300px;">
+                    <div class="service-content" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Operations & Maintenance (O&M)</h2>
+                        <h3 class="epc-subtitle">Ensuring Peak Efficiency and Longevity</h3>
+                        <p class="epc-intro">
+                            A solar system's efficiency depends on proper maintenance and performance tracking. Our
+                            Operations & Maintenance (O&M) services ensure that your solar power system functions at
+                            peak efficiency throughout its lifespan. We offer comprehensive care packages tailored to
+                            your specific needs.
+                        </p>
+
+                        <h3 class="status-title mb-5 highlight-text">Our O&M Services Include:</h3>
+
+                        <!-- Performance Monitoring -->
+                        <div class="service-row">
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Performance Monitoring</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Real-time data tracking for system optimization.</li>
+                                    <li>Detailed analytics to identify underperforming modules or strings.</li>
+                                    <li>Instant alerts for any system faults or anomalies.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                                    alt="Performance Monitoring" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Preventive Maintenance -->
+                        <div class="service-row reverse">
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Preventive Maintenance</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Regular system inspections to prevent issues before they arise.</li>
+                                    <li>Scheduled cleaning of solar panels to maintain maximum output.</li>
+                                    <li>Checking and tightening of electrical connections.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800"
+                                    alt="Preventive Maintenance" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Repairs & Claims -->
+                        <div class="service-row">
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Repairs & Claims Management</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Fast resolution of system faults to minimize downtime.</li>
+                                    <li>Expert handling of warranty claims with equipment manufacturers.</li>
+                                    <li>Replacement of faulty components with genuine parts.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=800"
+                                    alt="Repairs and Claims" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Technical Documentation -->
+                        <div class="service-row reverse">
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Technical Documentation</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Providing essential reports and system performance insights.</li>
+                                    <li>Maintaining detailed records of all maintenance activities and repairs.</li>
+                                    <li>Compliance reporting for regulatory authorities.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+                                    alt="Technical Documentation" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Warranty Management -->
+                        <div class="service-row">
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Warranty Management</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Coordination with manufacturers for hassle-free warranty claims.</li>
+                                    <li>Tracking of warranty periods for all major system components.</li>
+                                    <li>Ensuring all terms and conditions of warranties are met.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                                    alt="Warranty Management" class="service-section-img">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sidebar (Right Side) -->
+                <div class="col-lg-4" style="flex: 1; min-width: 300px;">
+
+                    <!-- All Services Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left">
+                        <h3 class="widget-title" style="background: var(--dark-blue);">All Services</h3>
+                        <ul class="service-list">
+                            <li><a href="solar-epc.html">Solar EPC Services</a></li>
+                            <li><a href="om-services.html" class="active">Operation & Maintenance</a></li>
+                            <li><a href="installation.html">Installation + BOS</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
-            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
-                Our comprehensive O&M services ensure your solar power plant operates at peak efficiency. We offer
-                regular cleaning, preventive maintenance, real-time monitoring, and rapid fault rectification.
-            </p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-broom fa-3x text-success mb-3"></i>
-                        <h4>Cleaning</h4>
-                        <p>Regular module cleaning to remove dust and debris, ensuring maximum light absorption.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
-                        <h4>Monitoring</h4>
-                        <p>24/7 remote monitoring to track performance and identify issues instantly.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-tools fa-3x text-success mb-3"></i>
-                        <h4>Maintenance</h4>
-                        <p>Scheduled preventive maintenance and corrective repairs by expert technicians.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="consultation.html" class="btn btn-primary mt-5">Get O&M Plan</a>
         </div>
     </section>
 
@@ -163,8 +305,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="images/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="images/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -196,7 +337,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -210,8 +351,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. <!-- | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> --></p>
-                
+                <p>&copy; 2025 Pareesan Services Pvt Ltd. All Rights Reserved. <!-- | <a href="privacy.html">Privacy
+                        Policy</a> | <a href="terms.html">Terms of Use</a> --></p>
+
             </div>
         </div>
     </footer>

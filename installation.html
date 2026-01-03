@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation - Pareesan Services Pvt Ltd</title>
-    <meta name="description" content="Learn more about Installation at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <title>Installation & BOS Services - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Expert Solar Installation and Balance of System (BoS) services. We ensure precision, safety, and efficiency in every solar project.">
     <link rel="icon" href="images/logo_transparent.png" type="image/png">
 
     <!-- Fonts -->
@@ -36,6 +37,66 @@
             text-align: center;
             color: var(--white);
         }
+
+        .service-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 30px;
+        }
+
+        .service-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-img-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-text-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-section-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .service-section-img:hover {
+            transform: translateY(-5px);
+        }
+
+        .epc-subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .epc-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .service-row.reverse {
+                flex-direction: row;
+            }
+
+            .service-section-img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -45,8 +106,7 @@
     <header class="header header-internal">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Pareesan Home">
-                <img src="images/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+                <img src="images/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -57,7 +117,7 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <a href="reviews.html" class="dropdown-item">Testimonials</a>
+                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
@@ -67,7 +127,7 @@
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
@@ -98,8 +158,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="images/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
+            <img src="images/logo_transparent.png" alt="Pareesan" class="mobile-logo">
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
@@ -115,48 +174,217 @@
     <!-- Hero Section -->
     <section class="page-hero">
         <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Installation <span class="highlight-text">Services</span></h1>
-            <p class="hero-desc">Precision, Safety, and Quality in every solar module installed.</p>
+            <h1 class="hero-title">Installation + <span class="highlight-text">BOS</span></h1>
+            <p class="hero-desc">Expert Installation and Balance of System Solutions.</p>
         </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- Structure Section -->
     <section class="section-padding">
-        <div class="container text-center">
-            <div class="section-header mb-5" data-aos="fade-up">
-                <div class="section-tag">Our Process</div>
-                <h2 class="section-title">Seamless <span class="highlight">Installation</span></h2>
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px;">
+
+                <!-- Main Content (Left Side) -->
+                <div class="col-lg-8" style="flex: 2; min-width: 300px;">
+                    <div class="service-content" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Expert Solar Installation & Balance of System (BoS) Services</h2>
+                        <h3 class="epc-subtitle">Seamless Solar Installation with Precision and Care</h3>
+                        <p class="epc-intro">
+                            At Pareesan Services Pvt Ltd, we provide top-tier solar installation services designed to
+                            deliver optimal performance and long-term reliability. Our team of certified professionals
+                            ensures that every solar project, whether residential, commercial, or industrial, is
+                            installed with the utmost precision and care, adhering to the highest industry standards.
+                        </p>
+
+                        <h3 class="status-title mb-5 highlight-text">Our Installation Services Include:</h3>
+
+                        <!-- Site Assessment -->
+                        <div class="service-row">
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Site Assessment & Preparation</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Detailed site analysis to determine the best placement and orientation of solar
+                                        panels.</li>
+                                    <li>Assessment of structural integrity and shading to optimize energy production.
+                                    </li>
+                                    <li>Preparation of the site, including necessary civil works and structural
+                                        modifications.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&q=80&w=800"
+                                    alt="Site Assessment" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Panel Installation -->
+                        <div class="service-row reverse">
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Panel Installation</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Professional mounting of solar panels using industry-leading techniques.</li>
+                                    <li>Ensuring secure and durable connections that withstand environmental conditions.
+                                    </li>
+                                    <li>Neat and efficient cable management for a clean, maintained pleasing
+                                        installation.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
+                                    alt="Solar Panel Installation" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Inverter Setup -->
+                        <div class="service-row">
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Inverter & Electrical Setup</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Expert installation of inverters, ensuring compatibility and maximum efficiency.
+                                    </li>
+                                    <li>Connection to the grid or battery storage systems with all necessary wiring and
+                                        protections.</li>
+                                    <li>Compliance with local electrical codes and standards to guarantee safety and
+                                        performance.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=800"
+                                    alt="Inverter Installation" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <!-- Commissioning -->
+                        <div class="service-row reverse">
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">System Commissioning</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Thorough testing of the entire system to ensure optimal operation.</li>
+                                    <li>Integration with monitoring systems to track performance and energy output.</li>
+                                    <li>Final inspection and approval, handing over a fully operational solar energy
+                                        system.</li>
+                                </ul>
+                            </div>
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                                    alt="System Commissioning" class="service-section-img">
+                            </div>
+                        </div>
+
+                        <div class="mt-5 mb-5 text-center">
+                            <h2 class="section-title mb-4">Comprehensive Balance of System (BoS) Solutions</h2>
+                            <p class="lead">The Balance of System (BoS) components are critical to the functionality and
+                                efficiency of your solar power installation. At Pareesan Services Pvt Ltd, we offer a
+                                complete range of BoS solutions, ensuring every aspect of your solar system is optimized
+                                for maximum performance.</p>
+                        </div>
+
+                        <h3 class="status-title mb-5 highlight-text">BoS Components & Services Include:</h3>
+
+                        <!-- Mounting Structures -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&q=80&w=800"
+                                    alt="Mounting Structures" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Mounting Structures</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Design and installation of durable and weather-resistant mounting systems for
+                                        rooftop and ground-mounted installations.</li>
+                                    <li>Customizable solutions to suit various site conditions and panel types.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Electrical Components -->
+                        <div class="service-row reverse">
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800"
+                                    alt="Electrical Components" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Electrical Components</h4>
+                                <ul class="epc-feature-list">
+                                    <li>High-quality wiring, connectors, and conduits to ensure safe and efficient power
+                                        transmission.</li>
+                                    <li>Selection and installation of protective devices such as fuses, circuit
+                                        breakers, and surge protectors.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Monitoring -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <!-- Replaced with a more relevant monitoring dashboard/app image -->
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                                    alt="Monitoring Systems" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Monitoring & Control Systems</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Advanced monitoring solutions to track energy production and system performance
+                                        in real-time.</li>
+                                    <li>Integration with smart home systems and mobile apps for easy access and control.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Energy Storage -->
+                        <div class="service-row reverse">
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+                                    alt="Energy Storage" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Energy Storage Solutions</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Installation of battery storage systems to maximize energy independence and
+                                        reliability.</li>
+                                    <li>Customized energy storage solutions tailored to meet your specific energy needs.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Safety Systems -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800"
+                                    alt="Safety Systems" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Safety Systems</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Installation of safety equipment such as disconnect switches, fire protection,
+                                        and grounding systems.</li>
+                                    <li>Adherence to all safety regulations and industry standards to protect your
+                                        investment.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sidebar (Right Side) -->
+                <div class="col-lg-4" style="flex: 1; min-width: 300px;">
+
+                    <!-- All Services Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left">
+                        <h3 class="widget-title" style="background: var(--dark-blue);">All Services</h3>
+                        <ul class="service-list">
+                            <li><a href="solar-epc.html">Solar EPC Services</a></li>
+                            <li><a href="om-services.html">Operation & Maintenance</a></li>
+                            <li><a href="installation.html" class="active">Installation + BOS</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
-            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
-                Our certified installation teams ensure your solar system is set up for maximum performance and
-                longevity.
-                We handle everything from structural mounting to electrical connections with meticulous attention to
-                detail.
-            </p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-tools fa-3x text-success mb-3"></i>
-                        <h4>Structural Mounting</h4>
-                        <p>Robust and weather-resistant mounting structures tailored to your roof type.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-plug fa-3x text-success mb-3"></i>
-                        <h4>Electrical Wiring</h4>
-                        <p>Safe and efficient DC/AC wiring adhering to international safety codes.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
-                        <h4>Testing & Commissioning</h4>
-                        <p>Rigorous testing to ensure the system operates at peak efficiency from day one.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="consultation.html" class="btn btn-primary mt-5">Book Installation</a>
         </div>
     </section>
 
@@ -165,8 +393,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="images/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="images/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -198,7 +425,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>

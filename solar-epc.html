@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar Epc - Pareesan Services Pvt Ltd</title>
-    <meta name="description" content="Learn more about Solar Epc at Pareesan Services Pvt Ltd. We provide top-tier Solar EPC solutions, ensuring quality, safety, and sustainability across India.">
+    <title>Solar EPC Services - Pareesan Services Pvt Ltd</title>
+    <meta name="description"
+        content="Detailed Solar EPC services by Pareesan Services Pvt Ltd. From engineering design to procurement and construction, we deliver turnkey solar solutions.">
     <link rel="icon" href="images/logo_transparent.png" type="image/png">
 
     <!-- Fonts -->
@@ -36,6 +37,69 @@
             text-align: center;
             color: var(--white);
         }
+
+        .service-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+            /* Increased spacing */
+            gap: 30px;
+        }
+
+        .service-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-img-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-text-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .service-section-img {
+            width: 100%;
+            height: 300px;
+            /* Taller images */
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .service-section-img:hover {
+            transform: translateY(-5px);
+        }
+
+        .epc-subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .epc-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .service-row.reverse {
+                flex-direction: row;
+                /* Stack normally on mobile */
+            }
+
+            .service-section-img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -45,8 +109,7 @@
     <header class="header header-internal">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="Pareesan Home">
-                <img src="images/logo_nav.png"
-                    alt="Pareesan Services" class="logo-img">
+                <img src="images/logo_nav.png" alt="Pareesan Services" class="logo-img">
             </a>
 
             <nav class="navbar">
@@ -57,7 +120,7 @@
                             <a href="about.html" class="dropdown-item">Who We Are</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="clients.html" class="dropdown-item">Our Clients</a>
-                            <a href="reviews.html" class="dropdown-item">Testimonials</a>
+                            <!-- <a href="reviews.html" class="dropdown-item">Testimonials</a> -->
                             <a href="careers.html" class="dropdown-item">Careers</a>
                         </div>
                     </li>
@@ -67,7 +130,7 @@
                             <a href="solar-epc.html" class="dropdown-item">Solar EPC</a>
                             <a href="installation.html" class="dropdown-item">Installation</a>
                             <a href="om-services.html" class="dropdown-item">O&M Services</a>
-</div>
+                        </div>
                     </li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
@@ -98,8 +161,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="images/logo_transparent.png" alt="Pareesan"
-                class="mobile-logo">
+            <img src="images/logo_transparent.png" alt="Pareesan" class="mobile-logo">
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
@@ -115,46 +177,144 @@
     <!-- Hero Section -->
     <section class="page-hero">
         <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">Solar <span class="highlight-text">EPC</span></h1>
-            <p class="hero-desc">Engineering, Procurement, and Construction excellence.</p>
+            <h1 class="hero-title">Solar EPC <span class="highlight-text">Services</span></h1>
+            <p class="hero-desc">Renewable Energy for a Sustainable World.</p>
         </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- Structure Section -->
     <section class="section-padding">
-        <div class="container text-center">
-            <div class="section-header mb-5" data-aos="fade-up">
-                <div class="section-tag">Our Expertise</div>
-                <h2 class="section-title">End-to-End <span class="highlight">Solutions</span></h2>
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px;">
+
+                <!-- Main Content (Left Side) -->
+                <div class="col-lg-8" style="flex: 2; min-width: 300px;">
+                    <div class="service-content" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Comprehensive Solar EPC Services</h2>
+                        <h3 class="epc-subtitle">Turnkey Solutions for Solar Power Projects</h3>
+                        <p class="epc-intro">
+                            At Pareesan Services Pvt Ltd, we specialize in providing end-to-end solar EPC services to
+                            help you harness the power of the sun. Our team of experts ensures a seamless experience
+                            from the initial consultation to the final installation and beyond, delivering
+                            high-performance solar power systems tailored to your needs.
+                        </p>
+
+                        <div class="epc-main-img" data-aos="zoom-in">
+                            <img src="https://images.unsplash.com/photo-1545209463-125c92337777?auto=format&fit=crop&q=80&w=1000"
+                                alt="Solar EPC Project Site" style="width: 100%; border-radius: var(--border-radius);">
+                        </div>
+
+                        <h3 class="section-title mb-5 highlight-text text-center">Our Solar EPC Process</h3>
+
+                        <!-- Engineering -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800"
+                                    alt="Engineering Team" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Engineering & Design</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Customized system design tailored to your specific energy requirements.</li>
+                                    <li>Advanced engineering solutions that maximize efficiency and energy yield.</li>
+                                    <li>Site assessment and feasibility studies to determine the best solar solution for
+                                        your location.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Procurement -->
+                        <div class="service-row reverse">
+                            <div class="service-img-col" data-aos="fade-left">
+                                <!-- Changed image to something more specific to warehouse/logistics/panels -->
+                                <img src="https://images.unsplash.com/photo-1566093097221-ac2335b09e70?auto=format&fit=crop&q=80&w=800"
+                                    alt="Procurement of Solar Panels" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Procurement</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Sourcing high-quality solar panels, inverters, and other components from leading
+                                        manufacturers.</li>
+                                    <li>Ensuring timely delivery of all materials to keep your project on schedule.</li>
+                                    <li>Competitive pricing and strong supplier relationships that offer you the best
+                                        value.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Construction -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&q=80&w=800"
+                                    alt="Construction Worker" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Construction & Installation</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Professional installation by certified technicians adhering to the highest
+                                        safety and quality standards.</li>
+                                    <li>Project management from start to finish, ensuring smooth execution and timely
+                                        completion.</li>
+                                    <li>On-site supervision to ensure all construction activities meet design
+                                        specifications and regulatory requirements.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Commissioning -->
+                        <div class="service-row reverse">
+                            <div class="service-img-col" data-aos="fade-left">
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800"
+                                    alt="Site Testing" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-right">
+                                <h4 class="mb-3">Commissioning & Testing</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Comprehensive testing of all components to ensure optimal performance.</li>
+                                    <li>Grid connection and synchronization with existing power infrastructure.</li>
+                                    <li>Final inspection and commissioning to hand over a fully operational solar power
+                                        system.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- O&M -->
+                        <div class="service-row">
+                            <div class="service-img-col" data-aos="fade-right">
+                                <!-- Changed to a clear O&M / cleaning / maintenance image -->
+                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800"
+                                    alt="Solar Maintenance" class="service-section-img">
+                            </div>
+                            <div class="service-text-col" data-aos="fade-left">
+                                <h4 class="mb-3">Operation & Maintenance (O&M)</h4>
+                                <ul class="epc-feature-list">
+                                    <li>Long-term maintenance plans to keep your solar system running efficiently.</li>
+                                    <li>Remote monitoring services to track system performance in real-time.</li>
+                                    <li>Rapid response to any issues, ensuring minimal downtime and maximum energy
+                                        production.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sidebar (Right Side) -->
+                <div class="col-lg-4" style="flex: 1; min-width: 300px;">
+
+                    <!-- All Services Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left">
+                        <h3 class="widget-title" style="background: var(--dark-blue);">All Services</h3>
+                        <ul class="service-list">
+                            <li><a href="solar-epc.html" class="active">Solar EPC Services</a></li>
+                            <li><a href="om-services.html">Operation & Maintenance</a></li>
+                            <li><a href="installation.html">Installation + BOS</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
-            <p class="lead" style="max-width: 800px; margin: 0 auto 40px;">
-                We provide complete turnkey solutions for solar power projects. From initial site survey and feasibility
-                analysis to design, engineering, procurement, construction, and commissioning.
-            </p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-drafting-compass fa-3x text-success mb-3"></i>
-                        <h4>Engineering</h4>
-                        <p>Detailed system design and engineering for maximum efficiency.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
-                        <h4>Procurement</h4>
-                        <p>Sourcing top-tier components from trusted global manufacturers.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="p-4 border rounded bg-light h-100">
-                        <i class="fas fa-hard-hat fa-3x text-success mb-3"></i>
-                        <h4>Construction</h4>
-                        <p>Professional installation with strict adherence to safety and quality standards.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="consultation.html" class="btn btn-primary mt-5">Start Your Project</a>
         </div>
     </section>
 
@@ -163,8 +323,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="images/logo_transparent.png" alt="Pareesan"
-                        class="footer-logo">
+                    <img src="images/logo_transparent.png" alt="Pareesan" class="footer-logo">
                     <p>Pareesan Services Pvt Ltd is a leading Solar EPC company committed to quality, safety, and
                         sustainability.</p>
                     <div class="social-links">
@@ -196,7 +355,7 @@
                             <li><a href="solar-epc.html">Solar EPC Services</a></li>
                             <li><a href="installation.html">Installation + BOS</a></li>
                             <li><a href="om-services.html">O&M Services</a></li>
-</ul>
+                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
