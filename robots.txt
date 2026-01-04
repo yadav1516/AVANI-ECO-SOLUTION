@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pareesan.com/sitemap.xml
