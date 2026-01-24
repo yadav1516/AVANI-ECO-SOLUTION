@@ -1,15 +1,15 @@
 /* Variables */
 :root {
     /* Primary Colors */
-    --primary-green: #2E7D32;
+    --primary-green: #31663a;
     /* Deep Forest Green */
-    --dark-green: #1B5E20;
+    --dark-green: #254d2b;
     /* Darker Green for Hover */
-    --bright-green: #4CAF50;
+    --bright-green: #3e8049;
     /* Vibrant Green */
-    --primary-blue: #0277BD;
+    --primary-blue: #17528d;
     /* Corporate Blue */
-    --dark-blue: #01579B;
+    --dark-blue: #0f3d6b;
     /* Deep Blue */
 
     /* Gradients */
@@ -518,14 +518,19 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
-    /* Reduced height */
+    min-height: 110px;
+    /* Increased to accommodate 100px logo */
+    padding: 10px 0;
 }
 
 .logo-img {
-    height: 70px;
-    /* Increased size for better visibility */
+    height: 100px;
+    /* Increased from 70px */
+    width: auto;
+    max-height: 120px;
 }
+
+
 
 .navbar {
     display: flex;
@@ -1597,7 +1602,9 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .footer-logo {
-    height: 70px;
+    width: 200px;
+    /* Increased footer logo size */
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -2604,7 +2611,8 @@ input[type=range]::-webkit-slider-thumb:hover {
 .header.scrolled .logo-img {
     filter: none;
     /* Show original colors if needed */
-    height: 50px;
+    height: 80px;
+    /* Increased from 50px */
     /* Resize slightly on scroll */
 }
 
@@ -2659,7 +2667,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .lead-modal-header {
-    background-color: #2E7D32;
+    background-color: #31663a;
     /* Grun Power Green */
     color: #fff;
     padding: 20px 25px;
@@ -2747,7 +2755,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 .lead-modal-body input:focus,
 .lead-modal-body select:focus,
 .lead-modal-body textarea:focus {
-    border-color: #2E7D32;
+    border-color: #31663a;
     outline: none;
     box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
 }
@@ -2761,7 +2769,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 .checkbox-group input {
     width: auto;
-    accent-color: #2E7D32;
+    accent-color: #31663a;
 }
 
 .btn-submit-lead {
@@ -4613,7 +4621,8 @@ input[type=range]::-webkit-slider-thumb:hover {
     }
 
     .logo-img {
-        height: 50px;
+        height: 60px;
+        /* Increased from 50px */
     }
 }
 
