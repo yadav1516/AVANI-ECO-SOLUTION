@@ -1,4 +1,4 @@
-/* Variables */
+﻿/* Variables */
 :root {
     /* Primary Colors */
     --primary-green: #31663a;
@@ -221,7 +221,7 @@ body {
 }
 
 body.projects-page {
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 h1,
@@ -471,7 +471,7 @@ img {
     backdrop-filter: none;
     z-index: 1000;
     box-shadow: none;
-    padding: 15px 0;
+    padding: 10px 0;
     transition: var(--transition);
 }
 
@@ -518,16 +518,16 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 110px;
-    /* Increased to accommodate 100px logo */
-    padding: 10px 0;
+    min-height: 80px;
+    /* Reduced from 110px */
+    padding: 5px 0;
 }
 
 .logo-img {
-    height: 100px;
-    /* Increased from 70px */
+    height: 70px;
+    /* Reduced from 100px */
     width: auto;
-    max-height: 120px;
+    max-height: 80px;
 }
 
 
@@ -2587,10 +2587,7 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .job-list li::before {
-    content: '•';
-    color: var(--primary-green);
-    position: absolute;
-    left: 0;
+    content: none;
 }
 
 /* =========================================
@@ -6336,4 +6333,65 @@ body.projects-page .header .mobile-toggle span {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+}
+
+/* =========================================
+   FIXES APPENDED BY ASSISTANT 
+   ========================================= */
+
+/* 1. Map Layout Fix (Centered, constrained) */
+.locations-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.location-map {
+    width: 100%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.india-map {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 2. Process Grid Fix (6 items in one line) */
+@media (min-width: 992px) {
+    .process-section .process-grid {
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .process-section .process-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Adjust internal elements */
+    .process-section .process-img {
+        height: 120px;
+    }
+
+    .process-section h3 {
+        font-size: 1rem;
+    }
+}
+/* Footer Contact Link Hover */
+.contact-info a {
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary-green) !important;
+    text-decoration: underline;
 }

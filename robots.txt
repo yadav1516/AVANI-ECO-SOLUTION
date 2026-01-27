@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pareesan.com/sitemap.xml
+Sitemap: https://avaniecosolution.com/sitemap.xml
