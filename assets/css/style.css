@@ -491,6 +491,17 @@ img {
     color: var(--white);
 }
 
+body.projects-page .header .btn-outline-dark {
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+}
+
+body.projects-page .header .btn-outline-dark:hover {
+    background: var(--text-dark);
+    color: var(--white);
+    border-color: var(--text-dark);
+}
+
 .header.scrolled .btn-outline-dark {
     border-color: var(--text-dark);
     color: var(--text-dark);
@@ -6386,6 +6397,7 @@ body.projects-page .header .mobile-toggle span {
         font-size: 1rem;
     }
 }
+
 /* Footer Contact Link Hover */
 .contact-info a {
     transition: color 0.3s ease;
@@ -6394,4 +6406,129 @@ body.projects-page .header .mobile-toggle span {
 .contact-info a:hover {
     color: var(--primary-green) !important;
     text-decoration: underline;
+}
+
+/* Residential Solar Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-bg);
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.form-group label .required {
+    color: red;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsiveness for Modal */
+@media (max-width: 576px) {
+    .modal-container {
+        width: 95%;
+        margin: 10px;
+    }
 }
